@@ -1,0 +1,705 @@
+Sun Oct  9 13:10:26 2022 [INFO]: Entering Main 
+Sun Oct  9 13:11:28 2022 [INFO]: Entering Main 
+Sun Oct  9 13:12:57 2022 [INFO]: Entering Main 
+Sun Oct  9 13:15:15 2022 [INFO]: Entering Main 
+Sun Oct  9 13:17:30 2022 [INFO]: Entering Main 
+Sun Oct  9 13:36:25 2022 [INFO]: Entering Main 
+Sun Oct  9 13:36:33 2022 [INFO]: Making Call Main 
+Sun Oct  9 13:37:42 2022 [INFO]: Entering Main 
+Sun Oct  9 13:37:44 2022 [INFO]: Closing Main 
+Sun Oct  9 13:40:30 2022 [INFO]: Entering Main 
+Sun Oct  9 13:40:37 2022 [INFO]: Closing Main 
+Sun Oct  9 13:50:52 2022 [INFO]: Entering Main 
+Sun Oct  9 13:50:52 2022 [INFO]: Entering OpenSocket 
+Sun Oct  9 13:50:52 2022 [INFO]: Entering BindData 
+Sun Oct  9 13:50:52 2022 [INFO]: Entering Listen 
+Sun Oct  9 13:50:52 2022 [INFO]: Entering Accept 
+Sun Oct  9 13:50:54 2022 [INFO]: Entering ReadData 
+Sun Oct  9 13:50:56 2022 [INFO]: Making Call Main 
+Sun Oct  9 13:51:00 2022 [INFO]: Entering makeCall 
+Sun Oct  9 13:51:00 2022 [INFO]: Entering ReadData 
+Sun Oct  9 13:51:02 2022 [INFO]: Entering Accept 
+Sun Oct  9 13:51:04 2022 [INFO]: Closing Main 
+Mon Oct 10 10:08:01 2022 [INFO]: Entering Main 
+Mon Oct 10 10:08:01 2022 [INFO]: Entering OpenSocket 
+Mon Oct 10 10:08:01 2022 [INFO]: Entering BindData 
+Mon Oct 10 10:08:01 2022 [INFO]: Entering Listen 
+Mon Oct 10 10:08:01 2022 [INFO]: Entering Accept 
+Mon Oct 10 10:08:05 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:08:06 2022 [INFO]: Entering login Main 
+Mon Oct 10 10:08:20 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:10:21 2022 [INFO]: Entering Main 
+Mon Oct 10 10:10:21 2022 [INFO]: Entering OpenSocket 
+Mon Oct 10 10:10:21 2022 [INFO]: Entering BindData 
+Mon Oct 10 10:10:21 2022 [INFO]: Entering Listen 
+Mon Oct 10 10:10:21 2022 [INFO]: Entering Accept 
+Mon Oct 10 10:10:23 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:10:35 2022 [INFO]: Entering Main 
+Mon Oct 10 10:10:35 2022 [INFO]: Entering OpenSocket 
+Mon Oct 10 10:10:35 2022 [INFO]: Entering BindData 
+Mon Oct 10 10:10:35 2022 [INFO]: Entering Listen 
+Mon Oct 10 10:10:35 2022 [INFO]: Entering Accept 
+Mon Oct 10 10:10:37 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:10:40 2022 [INFO]: Entering login Main 
+Mon Oct 10 10:11:00 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:12:49 2022 [INFO]: Entering Main 
+Mon Oct 10 10:12:49 2022 [INFO]: Entering OpenSocket 
+Mon Oct 10 10:12:49 2022 [INFO]: Entering BindData 
+Mon Oct 10 10:12:49 2022 [INFO]: Entering Listen 
+Mon Oct 10 10:12:49 2022 [INFO]: Entering Accept 
+Mon Oct 10 10:12:52 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:12:54 2022 [INFO]: Entering login Main 
+Mon Oct 10 10:13:04 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:15:14 2022 [INFO]: Entering Main 
+Mon Oct 10 10:15:14 2022 [INFO]: Entering OpenSocket 
+Mon Oct 10 10:15:14 2022 [INFO]: Entering BindData 
+Mon Oct 10 10:15:14 2022 [INFO]: Entering Listen 
+Mon Oct 10 10:15:14 2022 [INFO]: Entering Accept 
+Mon Oct 10 10:15:16 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:15:18 2022 [INFO]: Entering login Main 
+Mon Oct 10 10:15:37 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:16:04 2022 [INFO]: Entering Accept 
+Mon Oct 10 10:16:06 2022 [INFO]: Closing Main 
+Mon Oct 10 10:16:11 2022 [INFO]: Entering Main 
+Mon Oct 10 10:16:11 2022 [INFO]: Entering OpenSocket 
+Mon Oct 10 10:16:11 2022 [INFO]: Entering BindData 
+Mon Oct 10 10:16:11 2022 [INFO]: Entering Listen 
+Mon Oct 10 10:16:11 2022 [INFO]: Entering Accept 
+Mon Oct 10 10:16:14 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:16:16 2022 [INFO]: Entering login Main 
+Mon Oct 10 10:16:22 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:16:25 2022 [INFO]: Entering Accept 
+Mon Oct 10 10:16:26 2022 [INFO]: Closing Main 
+Mon Oct 10 10:17:21 2022 [INFO]: Entering Main 
+Mon Oct 10 10:17:21 2022 [INFO]: Entering OpenSocket 
+Mon Oct 10 10:17:21 2022 [INFO]: Entering BindData 
+Mon Oct 10 10:17:21 2022 [INFO]: Entering Listen 
+Mon Oct 10 10:17:21 2022 [INFO]: Entering Accept 
+Mon Oct 10 10:17:24 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:17:35 2022 [INFO]: Entering Main 
+Mon Oct 10 10:17:35 2022 [INFO]: Entering OpenSocket 
+Mon Oct 10 10:17:35 2022 [INFO]: Entering BindData 
+Mon Oct 10 10:17:35 2022 [INFO]: Entering Listen 
+Mon Oct 10 10:17:35 2022 [INFO]: Entering Accept 
+Mon Oct 10 10:17:37 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:17:38 2022 [INFO]: Entering login Main 
+Mon Oct 10 10:18:44 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:18:51 2022 [INFO]: Entering Accept 
+Mon Oct 10 10:19:26 2022 [INFO]: Closing Main 
+Mon Oct 10 10:19:27 2022 [INFO]: Entering Main 
+Mon Oct 10 10:19:27 2022 [INFO]: Entering OpenSocket 
+Mon Oct 10 10:19:27 2022 [INFO]: Entering BindData 
+Mon Oct 10 10:19:27 2022 [INFO]: Entering Listen 
+Mon Oct 10 10:19:27 2022 [INFO]: Entering Accept 
+Mon Oct 10 10:19:29 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:19:31 2022 [INFO]: Entering login Main 
+Mon Oct 10 10:19:44 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:19:45 2022 [INFO]: Entering Accept 
+Mon Oct 10 10:20:01 2022 [INFO]: Closing Main 
+Mon Oct 10 10:20:53 2022 [INFO]: Entering Main 
+Mon Oct 10 10:20:53 2022 [INFO]: Entering OpenSocket 
+Mon Oct 10 10:20:53 2022 [INFO]: Entering BindData 
+Mon Oct 10 10:20:53 2022 [INFO]: Entering Listen 
+Mon Oct 10 10:20:53 2022 [INFO]: Entering Accept 
+Mon Oct 10 10:20:55 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:20:57 2022 [INFO]: Entering login Main 
+Mon Oct 10 10:21:14 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:21:26 2022 [INFO]: Entering Main 
+Mon Oct 10 10:21:26 2022 [INFO]: Entering OpenSocket 
+Mon Oct 10 10:21:26 2022 [INFO]: Entering BindData 
+Mon Oct 10 10:21:26 2022 [INFO]: Entering Listen 
+Mon Oct 10 10:21:26 2022 [INFO]: Entering Accept 
+Mon Oct 10 10:21:29 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:21:30 2022 [INFO]: Entering login Main 
+Mon Oct 10 10:21:40 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:21:43 2022 [INFO]: Entering Accept 
+Mon Oct 10 10:21:46 2022 [INFO]: Closing Main 
+Mon Oct 10 10:21:58 2022 [INFO]: Entering Main 
+Mon Oct 10 10:21:58 2022 [INFO]: Entering OpenSocket 
+Mon Oct 10 10:21:58 2022 [INFO]: Entering BindData 
+Mon Oct 10 10:21:58 2022 [INFO]: Entering Listen 
+Mon Oct 10 10:21:58 2022 [INFO]: Entering Accept 
+Mon Oct 10 10:22:01 2022 [INFO]: Entering ReadData 
+Mon Oct 10 10:22:02 2022 [INFO]: Entering login Main 
+Mon Oct 10 10:22:11 2022 [INFO]: Entering ReadData 
+Mon Oct 10 11:16:48 2022 [INFO]: Entering Main 
+Mon Oct 10 11:16:48 2022 [INFO]: Entering OpenSocket 
+Mon Oct 10 11:16:48 2022 [INFO]: Entering BindData 
+Mon Oct 10 11:16:48 2022 [INFO]: Entering Listen 
+Mon Oct 10 11:16:48 2022 [INFO]: Entering Accept 
+Mon Oct 10 11:16:51 2022 [INFO]: Entering ReadData 
+Mon Oct 10 11:16:53 2022 [INFO]: Entering login Main 
+Mon Oct 10 11:16:56 2022 [INFO]: Entering ReadData 
+Mon Oct 10 11:17:38 2022 [INFO]: Entering login Main 
+Mon Oct 10 11:17:42 2022 [INFO]: Entering ReadData 
+Mon Oct 10 11:17:44 2022 [INFO]: Entering Accept 
+Mon Oct 10 11:17:47 2022 [INFO]: Closing Main 
+Mon Oct 10 11:23:39 2022 [INFO]: Entering Main 
+Mon Oct 10 11:23:39 2022 [INFO]: Entering OpenSocket 
+Mon Oct 10 11:23:39 2022 [INFO]: Entering BindData 
+Mon Oct 10 11:23:39 2022 [INFO]: Entering Listen 
+Mon Oct 10 11:23:39 2022 [INFO]: Entering Accept 
+Mon Oct 10 11:23:41 2022 [INFO]: Entering ReadData 
+Mon Oct 10 11:23:43 2022 [INFO]: Entering login Main 
+Mon Oct 10 11:23:54 2022 [INFO]: Entering ReadData 
+Mon Oct 10 11:23:57 2022 [INFO]: Entering Accept 
+Mon Oct 10 11:25:36 2022 [INFO]: Closing Main 
+Mon Oct 10 11:25:37 2022 [INFO]: Entering Main 
+Mon Oct 10 11:25:37 2022 [INFO]: Entering OpenSocket 
+Mon Oct 10 11:25:37 2022 [INFO]: Entering BindData 
+Mon Oct 10 11:25:37 2022 [INFO]: Entering Listen 
+Mon Oct 10 11:25:37 2022 [INFO]: Entering Accept 
+Mon Oct 10 11:25:40 2022 [INFO]: Entering ReadData 
+Mon Oct 10 11:25:44 2022 [INFO]: Entering login Main 
+Mon Oct 10 11:25:47 2022 [INFO]: Entering ReadData 
+Mon Oct 10 11:25:49 2022 [INFO]: Entering Accept 
+Mon Oct 10 23:54:59 2022 [INFO]: Entering Main 
+Mon Oct 10 23:54:59 2022 [INFO]: Entering OpenSocket 
+Mon Oct 10 23:54:59 2022 [INFO]: Entering BindData 
+Mon Oct 10 23:54:59 2022 [INFO]: Entering Listen 
+Mon Oct 10 23:54:59 2022 [INFO]: Entering Accept 
+Mon Oct 10 23:55:53 2022 [INFO]: Entering ReadData 
+Mon Oct 10 23:56:50 2022 [INFO]: Entering Accept 
+Mon Oct 10 23:56:59 2022 [INFO]: Closing Main 
+Mon Oct 10 23:59:22 2022 [INFO]: Entering Main 
+Mon Oct 10 23:59:22 2022 [INFO]: Entering OpenSocket 
+Mon Oct 10 23:59:22 2022 [INFO]: Entering BindData 
+Mon Oct 10 23:59:22 2022 [INFO]: Entering Listen 
+Mon Oct 10 23:59:22 2022 [INFO]: Entering Accept 
+Mon Oct 10 23:59:40 2022 [INFO]: Entering ReadData 
+Tue Oct 11 00:00:11 2022 [INFO]: Entering Accept 
+Tue Oct 11 00:00:14 2022 [INFO]: Closing Main 
+Tue Oct 11 00:00:50 2022 [INFO]: Entering Main 
+Tue Oct 11 00:00:50 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 00:00:50 2022 [INFO]: Entering BindData 
+Tue Oct 11 00:00:50 2022 [INFO]: Entering Listen 
+Tue Oct 11 00:00:50 2022 [INFO]: Entering Accept 
+Tue Oct 11 00:01:07 2022 [INFO]: Entering ReadData 
+Tue Oct 11 00:02:16 2022 [INFO]: Entering Accept 
+Tue Oct 11 00:02:20 2022 [INFO]: Closing Main 
+Tue Oct 11 00:03:00 2022 [INFO]: Entering Main 
+Tue Oct 11 00:03:00 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 00:03:00 2022 [INFO]: Entering BindData 
+Tue Oct 11 00:03:00 2022 [INFO]: Entering Listen 
+Tue Oct 11 00:03:00 2022 [INFO]: Entering Accept 
+Tue Oct 11 00:03:19 2022 [INFO]: Entering ReadData 
+Tue Oct 11 00:17:02 2022 [INFO]: Entering Accept 
+Tue Oct 11 00:17:06 2022 [INFO]: Closing Main 
+Tue Oct 11 00:26:30 2022 [INFO]: Entering Main 
+Tue Oct 11 00:26:30 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 00:26:30 2022 [INFO]: Entering BindData 
+Tue Oct 11 00:26:30 2022 [INFO]: Entering Listen 
+Tue Oct 11 00:26:30 2022 [INFO]: Entering Accept 
+Tue Oct 11 00:26:43 2022 [INFO]: Entering ReadData 
+Tue Oct 11 00:26:47 2022 [INFO]: Making Call Main 
+Tue Oct 11 00:26:56 2022 [INFO]: Entering makeCall 
+Tue Oct 11 00:26:56 2022 [INFO]: Entering ReadData 
+Tue Oct 11 00:33:08 2022 [INFO]: Entering Main 
+Tue Oct 11 00:33:08 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 00:33:08 2022 [INFO]: Entering BindData 
+Tue Oct 11 00:33:08 2022 [INFO]: Entering Listen 
+Tue Oct 11 00:33:08 2022 [INFO]: Entering Accept 
+Tue Oct 11 00:33:15 2022 [INFO]: Entering ReadData 
+Tue Oct 11 00:33:23 2022 [INFO]: Making Call Main 
+Tue Oct 11 00:33:43 2022 [INFO]: Entering makeCall 
+Tue Oct 11 00:33:43 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:07:16 2022 [INFO]: Entering Main 
+Tue Oct 11 11:07:16 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 11:07:16 2022 [INFO]: Entering BindData 
+Tue Oct 11 11:07:16 2022 [INFO]: Entering Listen 
+Tue Oct 11 11:07:16 2022 [INFO]: Entering Accept 
+Tue Oct 11 11:07:41 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:07:44 2022 [INFO]: Making Call Main 
+Tue Oct 11 11:07:47 2022 [INFO]: Entering makeCall 
+Tue Oct 11 11:07:47 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:07:48 2022 [INFO]: Entering Accept 
+Tue Oct 11 11:07:56 2022 [INFO]: Closing Main 
+Tue Oct 11 11:29:01 2022 [INFO]: Entering Main 
+Tue Oct 11 11:29:01 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 11:29:01 2022 [INFO]: Entering BindData 
+Tue Oct 11 11:29:01 2022 [INFO]: Entering Listen 
+Tue Oct 11 11:29:01 2022 [INFO]: Entering Accept 
+Tue Oct 11 11:29:04 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:29:57 2022 [INFO]: Entering Main 
+Tue Oct 11 11:29:57 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 11:29:57 2022 [INFO]: Entering BindData 
+Tue Oct 11 11:29:57 2022 [INFO]: Entering Listen 
+Tue Oct 11 11:29:57 2022 [INFO]: Entering Accept 
+Tue Oct 11 11:30:00 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:30:04 2022 [INFO]: Making Call Main 
+Tue Oct 11 11:30:07 2022 [INFO]: Entering makeCall 
+Tue Oct 11 11:30:07 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:30:15 2022 [INFO]: Making Call Main 
+Tue Oct 11 11:30:18 2022 [INFO]: Entering makeCall 
+Tue Oct 11 11:30:18 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:30:24 2022 [INFO]: Entering Accept 
+Tue Oct 11 11:30:27 2022 [INFO]: Closing Main 
+Tue Oct 11 11:30:31 2022 [INFO]: Entering Main 
+Tue Oct 11 11:30:31 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 11:30:31 2022 [INFO]: Entering BindData 
+Tue Oct 11 11:30:31 2022 [INFO]: Entering Listen 
+Tue Oct 11 11:30:31 2022 [INFO]: Entering Accept 
+Tue Oct 11 11:30:34 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:30:36 2022 [INFO]: Making Call Main 
+Tue Oct 11 11:30:39 2022 [INFO]: Entering makeCall 
+Tue Oct 11 11:30:39 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:31:19 2022 [INFO]: Entering Main 
+Tue Oct 11 11:31:19 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 11:31:19 2022 [INFO]: Entering BindData 
+Tue Oct 11 11:31:19 2022 [INFO]: Entering Listen 
+Tue Oct 11 11:31:19 2022 [INFO]: Entering Accept 
+Tue Oct 11 11:31:23 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:31:27 2022 [INFO]: Making Call Main 
+Tue Oct 11 11:31:31 2022 [INFO]: Entering makeCall 
+Tue Oct 11 11:31:31 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:31:39 2022 [INFO]: Entering Accept 
+Tue Oct 11 11:31:41 2022 [INFO]: Closing Main 
+Tue Oct 11 11:36:02 2022 [INFO]: Entering Main 
+Tue Oct 11 11:36:02 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 11:36:02 2022 [INFO]: Entering BindData 
+Tue Oct 11 11:36:02 2022 [INFO]: Entering Listen 
+Tue Oct 11 11:36:02 2022 [INFO]: Entering Accept 
+Tue Oct 11 11:36:05 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:36:07 2022 [INFO]: Making Call Main 
+Tue Oct 11 11:36:10 2022 [INFO]: Entering makeCall 
+Tue Oct 11 11:36:10 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:36:13 2022 [INFO]: Entering Accept 
+Tue Oct 11 11:36:22 2022 [INFO]: Closing Main 
+Tue Oct 11 11:38:10 2022 [INFO]: Entering Main 
+Tue Oct 11 11:38:10 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 11:38:10 2022 [INFO]: Entering BindData 
+Tue Oct 11 11:38:10 2022 [INFO]: Entering Listen 
+Tue Oct 11 11:38:10 2022 [INFO]: Entering Accept 
+Tue Oct 11 11:38:13 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:38:57 2022 [INFO]: Entering Main 
+Tue Oct 11 11:38:57 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 11:38:57 2022 [INFO]: Entering BindData 
+Tue Oct 11 11:38:57 2022 [INFO]: Entering Listen 
+Tue Oct 11 11:38:57 2022 [INFO]: Entering Accept 
+Tue Oct 11 11:39:00 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:39:03 2022 [INFO]: Making Call Main 
+Tue Oct 11 11:39:06 2022 [INFO]: Entering makeCall 
+Tue Oct 11 11:39:06 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:39:23 2022 [INFO]: Making Call Main 
+Tue Oct 11 11:39:26 2022 [INFO]: Entering makeCall 
+Tue Oct 11 11:39:26 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:39:35 2022 [INFO]: Entering Accept 
+Tue Oct 11 11:39:39 2022 [INFO]: Closing Main 
+Tue Oct 11 11:41:22 2022 [INFO]: Entering Main 
+Tue Oct 11 11:41:22 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 11:41:22 2022 [INFO]: Entering BindData 
+Tue Oct 11 11:41:22 2022 [INFO]: Entering Listen 
+Tue Oct 11 11:41:22 2022 [INFO]: Entering Accept 
+Tue Oct 11 11:41:24 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:41:41 2022 [INFO]: Making Call Main 
+Tue Oct 11 11:41:44 2022 [INFO]: Entering makeCall 
+Tue Oct 11 11:41:44 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:41:50 2022 [INFO]: Entering login Main 
+Tue Oct 11 11:42:23 2022 [INFO]: Entering ReadData 
+Tue Oct 11 11:42:29 2022 [INFO]: Entering Accept 
+Tue Oct 11 11:42:34 2022 [INFO]: Closing Main 
+Tue Oct 11 12:23:21 2022 [INFO]: Entering Main 
+Tue Oct 11 12:23:21 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 12:23:21 2022 [INFO]: Entering BindData 
+Tue Oct 11 12:23:21 2022 [INFO]: Entering Listen 
+Tue Oct 11 12:23:21 2022 [INFO]: Entering Accept 
+Tue Oct 11 12:23:23 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:23:25 2022 [INFO]: Entering Registration Main 
+Tue Oct 11 12:23:56 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:24:56 2022 [INFO]: Entering Main 
+Tue Oct 11 12:24:56 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 12:24:56 2022 [INFO]: Entering BindData 
+Tue Oct 11 12:24:56 2022 [INFO]: Entering Listen 
+Tue Oct 11 12:24:56 2022 [INFO]: Entering Accept 
+Tue Oct 11 12:25:00 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:25:03 2022 [INFO]: Entering Registration Main 
+Tue Oct 11 12:25:12 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:27:45 2022 [INFO]: Entering Main 
+Tue Oct 11 12:27:45 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 12:27:45 2022 [INFO]: Entering BindData 
+Tue Oct 11 12:27:45 2022 [INFO]: Entering Listen 
+Tue Oct 11 12:27:45 2022 [INFO]: Entering Accept 
+Tue Oct 11 12:27:48 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:27:51 2022 [INFO]: Entering login Main 
+Tue Oct 11 12:28:18 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:28:25 2022 [INFO]: Entering Accept 
+Tue Oct 11 12:28:30 2022 [INFO]: Closing Main 
+Tue Oct 11 12:31:53 2022 [INFO]: Entering Main 
+Tue Oct 11 12:31:53 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 12:31:53 2022 [INFO]: Entering BindData 
+Tue Oct 11 12:31:53 2022 [INFO]: Entering Listen 
+Tue Oct 11 12:31:53 2022 [INFO]: Entering Accept 
+Tue Oct 11 12:31:57 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:32:01 2022 [INFO]: Entering login Main 
+Tue Oct 11 12:32:23 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:32:50 2022 [INFO]: Making Call Main 
+Tue Oct 11 12:32:55 2022 [INFO]: Entering makeCall 
+Tue Oct 11 12:32:55 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:33:33 2022 [INFO]: Entering login Main 
+Tue Oct 11 12:33:47 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:33:51 2022 [INFO]: Making Call Main 
+Tue Oct 11 12:33:57 2022 [INFO]: Entering makeCall 
+Tue Oct 11 12:33:57 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:34:03 2022 [INFO]: Entering Accept 
+Tue Oct 11 12:34:08 2022 [INFO]: Closing Main 
+Tue Oct 11 12:35:52 2022 [INFO]: Entering Main 
+Tue Oct 11 12:35:52 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 12:35:52 2022 [INFO]: Entering BindData 
+Tue Oct 11 12:35:52 2022 [INFO]: Entering Listen 
+Tue Oct 11 12:35:52 2022 [INFO]: Entering Accept 
+Tue Oct 11 12:35:59 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:36:02 2022 [INFO]: Entering Registration Main 
+Tue Oct 11 12:36:43 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:36:57 2022 [INFO]: Entering login Main 
+Tue Oct 11 12:37:17 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:37:48 2022 [INFO]: Making Call Main 
+Tue Oct 11 12:37:57 2022 [INFO]: Entering makeCall 
+Tue Oct 11 12:37:57 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:38:04 2022 [INFO]: Entering Accept 
+Tue Oct 11 12:38:08 2022 [INFO]: Closing Main 
+Tue Oct 11 12:51:44 2022 [INFO]: Entering Main 
+Tue Oct 11 12:51:44 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 12:51:44 2022 [INFO]: Entering BindData 
+Tue Oct 11 12:51:44 2022 [INFO]: Entering Listen 
+Tue Oct 11 12:51:44 2022 [INFO]: Entering Accept 
+Tue Oct 11 12:51:48 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:51:52 2022 [INFO]: Entering Registration Main 
+Tue Oct 11 12:52:28 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:52:33 2022 [INFO]: Entering login Main 
+Tue Oct 11 12:52:42 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:52:50 2022 [INFO]: Entering login Main 
+Tue Oct 11 12:53:02 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:53:06 2022 [INFO]: Entering Accept 
+Tue Oct 11 12:53:09 2022 [INFO]: Closing Main 
+Tue Oct 11 12:53:47 2022 [INFO]: Entering Main 
+Tue Oct 11 12:53:47 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 12:53:47 2022 [INFO]: Entering BindData 
+Tue Oct 11 12:53:47 2022 [INFO]: Entering Listen 
+Tue Oct 11 12:53:47 2022 [INFO]: Entering Accept 
+Tue Oct 11 12:53:49 2022 [INFO]: Closing Main 
+Tue Oct 11 12:54:09 2022 [INFO]: Entering Main 
+Tue Oct 11 12:54:09 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 12:54:09 2022 [INFO]: Entering BindData 
+Tue Oct 11 12:54:09 2022 [INFO]: Entering Listen 
+Tue Oct 11 12:54:09 2022 [INFO]: Entering Accept 
+Tue Oct 11 12:54:14 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:54:16 2022 [INFO]: Entering Registration Main 
+Tue Oct 11 12:54:37 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:54:41 2022 [INFO]: Entering login Main 
+Tue Oct 11 12:55:01 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:55:10 2022 [INFO]: Making Call Main 
+Tue Oct 11 12:55:19 2022 [INFO]: Entering makeCall 
+Tue Oct 11 12:55:19 2022 [INFO]: Entering ReadData 
+Tue Oct 11 12:55:24 2022 [INFO]: Entering Accept 
+Tue Oct 11 12:55:27 2022 [INFO]: Closing Main 
+Tue Oct 11 13:55:51 2022 [INFO]: Entering Main 
+Tue Oct 11 13:55:51 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 13:55:51 2022 [INFO]: Entering BindData 
+Tue Oct 11 13:55:51 2022 [INFO]: Entering Listen 
+Tue Oct 11 13:55:51 2022 [INFO]: Entering Accept 
+Tue Oct 11 13:55:55 2022 [INFO]: Entering ReadData 
+Tue Oct 11 13:56:25 2022 [INFO]: Entering Main 
+Tue Oct 11 13:56:25 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 13:56:25 2022 [INFO]: Entering BindData 
+Tue Oct 11 13:56:25 2022 [INFO]: Entering Listen 
+Tue Oct 11 13:56:25 2022 [INFO]: Entering Accept 
+Tue Oct 11 13:56:33 2022 [INFO]: Closing Main 
+Tue Oct 11 13:57:34 2022 [INFO]: Entering Main 
+Tue Oct 11 13:57:34 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 13:57:34 2022 [INFO]: Entering BindData 
+Tue Oct 11 13:57:34 2022 [INFO]: Entering Listen 
+Tue Oct 11 13:57:34 2022 [INFO]: Entering Accept 
+Tue Oct 11 13:58:51 2022 [INFO]: Closing Main 
+Tue Oct 11 13:58:52 2022 [INFO]: Entering Main 
+Tue Oct 11 13:58:52 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 13:58:52 2022 [INFO]: Entering BindData 
+Tue Oct 11 13:58:52 2022 [INFO]: Entering Listen 
+Tue Oct 11 13:58:52 2022 [INFO]: Entering Accept 
+Tue Oct 11 13:59:09 2022 [INFO]: Closing Main 
+Tue Oct 11 13:59:20 2022 [INFO]: Entering Main 
+Tue Oct 11 13:59:20 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 13:59:20 2022 [INFO]: Entering BindData 
+Tue Oct 11 13:59:20 2022 [INFO]: Entering Listen 
+Tue Oct 11 13:59:20 2022 [INFO]: Entering Accept 
+Tue Oct 11 13:59:50 2022 [INFO]: Closing Main 
+Tue Oct 11 13:59:51 2022 [INFO]: Entering Main 
+Tue Oct 11 13:59:51 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 13:59:51 2022 [INFO]: Entering BindData 
+Tue Oct 11 13:59:51 2022 [INFO]: Entering Listen 
+Tue Oct 11 13:59:51 2022 [INFO]: Entering Accept 
+Tue Oct 11 14:00:04 2022 [INFO]: Closing Main 
+Tue Oct 11 14:59:37 2022 [INFO]: Entering Main 
+Tue Oct 11 14:59:37 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 14:59:37 2022 [INFO]: Entering BindData 
+Tue Oct 11 14:59:37 2022 [INFO]: Entering Listen 
+Tue Oct 11 14:59:37 2022 [INFO]: Entering Accept 
+Tue Oct 11 14:59:40 2022 [INFO]: Entering ReadData 
+Tue Oct 11 14:59:49 2022 [INFO]: Entering Registration Main 
+Tue Oct 11 15:01:16 2022 [INFO]: Entering ReadData 
+Tue Oct 11 15:01:25 2022 [INFO]: Entering Accept 
+Tue Oct 11 15:33:03 2022 [INFO]: Entering Main 
+Tue Oct 11 15:33:03 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 15:33:03 2022 [INFO]: Entering BindData 
+Tue Oct 11 15:33:03 2022 [INFO]: Entering Listen 
+Tue Oct 11 15:33:03 2022 [INFO]: Entering Accept 
+Tue Oct 11 15:33:13 2022 [INFO]: Entering Main 
+Tue Oct 11 15:33:13 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 15:33:13 2022 [ERROR]: Binding failed ConnectServer 
+Tue Oct 11 15:33:17 2022 [INFO]: Closing Main 
+Tue Oct 11 15:33:20 2022 [INFO]: Entering Main 
+Tue Oct 11 15:33:20 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 15:33:20 2022 [INFO]: Entering BindData 
+Tue Oct 11 15:33:20 2022 [INFO]: Entering Listen 
+Tue Oct 11 15:33:20 2022 [INFO]: Entering Accept 
+Tue Oct 11 15:33:24 2022 [INFO]: Entering Main 
+Tue Oct 11 15:33:24 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 15:33:24 2022 [ERROR]: Binding failed ConnectServer 
+Tue Oct 11 15:33:39 2022 [INFO]: Closing Main 
+Tue Oct 11 15:33:41 2022 [INFO]: Entering Main 
+Tue Oct 11 15:33:41 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 15:33:41 2022 [INFO]: Entering BindData 
+Tue Oct 11 15:33:41 2022 [INFO]: Entering Listen 
+Tue Oct 11 15:33:41 2022 [INFO]: Entering Accept 
+Tue Oct 11 15:33:45 2022 [INFO]: Entering Main 
+Tue Oct 11 15:33:45 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 15:33:45 2022 [ERROR]: Binding failed ConnectServer 
+Tue Oct 11 15:33:57 2022 [INFO]: Entering ReadData 
+Tue Oct 11 15:34:02 2022 [INFO]: Making Call Main 
+Tue Oct 11 15:34:08 2022 [INFO]: Entering makeCall 
+Tue Oct 11 15:34:08 2022 [INFO]: Entering ReadData 
+Tue Oct 11 15:34:14 2022 [INFO]: Entering login Main 
+Tue Oct 11 15:34:42 2022 [INFO]: Entering ReadData 
+Tue Oct 11 15:34:47 2022 [INFO]: Entering login Main 
+Tue Oct 11 15:35:03 2022 [INFO]: Entering ReadData 
+Tue Oct 11 15:35:07 2022 [INFO]: Entering Accept 
+Tue Oct 11 15:35:11 2022 [INFO]: Closing Main 
+Tue Oct 11 22:47:04 2022 [INFO]: Entering Main 
+Tue Oct 11 22:47:04 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 22:47:04 2022 [INFO]: Entering BindData 
+Tue Oct 11 22:47:04 2022 [INFO]: Entering Listen 
+Tue Oct 11 22:47:04 2022 [INFO]: Entering Accept 
+Tue Oct 11 22:47:09 2022 [INFO]: Entering ReadData 
+Tue Oct 11 22:47:26 2022 [INFO]: Entering login Main 
+Tue Oct 11 22:47:37 2022 [INFO]: Entering ReadData 
+Tue Oct 11 22:47:40 2022 [INFO]: Entering login Main 
+Tue Oct 11 22:48:04 2022 [INFO]: Entering ReadData 
+Tue Oct 11 22:48:17 2022 [INFO]: Entering login Main 
+Tue Oct 11 22:48:29 2022 [INFO]: Entering ReadData 
+Tue Oct 11 22:48:35 2022 [INFO]: Making Call Main 
+Tue Oct 11 22:48:39 2022 [INFO]: Entering makeCall 
+Tue Oct 11 22:48:39 2022 [INFO]: Entering ReadData 
+Tue Oct 11 22:48:45 2022 [INFO]: Entering Accept 
+Tue Oct 11 22:48:50 2022 [INFO]: Closing Main 
+Tue Oct 11 23:35:42 2022 [INFO]: Entering Main 
+Tue Oct 11 23:35:42 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 23:35:42 2022 [INFO]: Entering BindData 
+Tue Oct 11 23:35:42 2022 [INFO]: Entering Listen 
+Tue Oct 11 23:35:42 2022 [INFO]: Entering Accept 
+Tue Oct 11 23:35:44 2022 [INFO]: Entering ReadData 
+Tue Oct 11 23:35:46 2022 [INFO]: Making Call Main 
+Tue Oct 11 23:35:52 2022 [INFO]: Entering makeCall 
+Tue Oct 11 23:35:52 2022 [INFO]: Entering ReadData 
+Tue Oct 11 23:35:55 2022 [INFO]: Entering Accept 
+Tue Oct 11 23:35:59 2022 [INFO]: Closing Main 
+Tue Oct 11 23:52:37 2022 [INFO]: Entering Main 
+Tue Oct 11 23:52:37 2022 [INFO]: Entering OpenSocket 
+Tue Oct 11 23:52:37 2022 [INFO]: Entering BindData 
+Tue Oct 11 23:52:37 2022 [INFO]: Entering Listen 
+Tue Oct 11 23:52:37 2022 [INFO]: Entering Accept 
+Tue Oct 11 23:52:40 2022 [INFO]: Entering ReadData 
+Tue Oct 11 23:52:43 2022 [INFO]: Making Call Main 
+Tue Oct 11 23:52:47 2022 [INFO]: Entering makeCall 
+Tue Oct 11 23:52:47 2022 [INFO]: Entering logger 
+Tue Oct 11 23:52:47 2022 [INFO]: Entering ReadData 
+Tue Oct 11 23:52:52 2022 [INFO]: Entering Accept 
+Tue Oct 11 23:52:58 2022 [INFO]: Closing Main 
+Wed Oct 12 10:56:15 2022 [INFO]: Entering Main 
+Wed Oct 12 10:56:15 2022 [INFO]: Entering OpenSocket 
+Wed Oct 12 10:56:15 2022 [INFO]: Entering BindData 
+Wed Oct 12 10:56:15 2022 [INFO]: Entering Listen 
+Wed Oct 12 10:56:15 2022 [INFO]: Entering Accept 
+Wed Oct 12 10:56:20 2022 [INFO]: Entering ReadData 
+Wed Oct 12 10:56:21 2022 [INFO]: Entering Registration Main 
+Wed Oct 12 10:56:56 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:08:15 2022 [INFO]: Entering Main 
+Wed Oct 12 11:08:15 2022 [INFO]: Entering OpenSocket 
+Wed Oct 12 11:08:15 2022 [INFO]: Entering BindData 
+Wed Oct 12 11:08:15 2022 [INFO]: Entering Listen 
+Wed Oct 12 11:08:15 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:08:17 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:08:19 2022 [INFO]: Entering Registration Main 
+Wed Oct 12 11:09:35 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:09:35 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:09:41 2022 [INFO]: Closing Main 
+Wed Oct 12 11:11:08 2022 [INFO]: Entering Main 
+Wed Oct 12 11:11:08 2022 [INFO]: Entering OpenSocket 
+Wed Oct 12 11:11:08 2022 [INFO]: Entering BindData 
+Wed Oct 12 11:11:08 2022 [INFO]: Entering Listen 
+Wed Oct 12 11:11:08 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:11:12 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:11:15 2022 [INFO]: Entering Registration Main 
+Wed Oct 12 11:11:47 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:11:47 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:13:01 2022 [INFO]: Closing Main 
+Wed Oct 12 11:13:36 2022 [INFO]: Entering Main 
+Wed Oct 12 11:13:36 2022 [INFO]: Entering OpenSocket 
+Wed Oct 12 11:13:36 2022 [INFO]: Entering BindData 
+Wed Oct 12 11:13:36 2022 [INFO]: Entering Listen 
+Wed Oct 12 11:13:36 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:13:39 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:13:42 2022 [INFO]: Entering Registration Main 
+Wed Oct 12 11:14:09 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:14:09 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:14:41 2022 [INFO]: Closing Main 
+Wed Oct 12 11:20:38 2022 [INFO]: Entering Main 
+Wed Oct 12 11:20:38 2022 [INFO]: Entering OpenSocket 
+Wed Oct 12 11:20:38 2022 [INFO]: Entering BindData 
+Wed Oct 12 11:20:38 2022 [INFO]: Entering Listen 
+Wed Oct 12 11:20:38 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:20:40 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:20:42 2022 [INFO]: Entering Registration Main 
+Wed Oct 12 11:21:28 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:21:28 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:21:33 2022 [INFO]: Closing Main 
+Wed Oct 12 11:23:03 2022 [INFO]: Entering Main 
+Wed Oct 12 11:23:03 2022 [INFO]: Entering OpenSocket 
+Wed Oct 12 11:23:03 2022 [INFO]: Entering BindData 
+Wed Oct 12 11:23:03 2022 [INFO]: Entering Listen 
+Wed Oct 12 11:23:03 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:23:06 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:23:07 2022 [INFO]: Entering Registration Main 
+Wed Oct 12 11:23:39 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:23:39 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:23:46 2022 [INFO]: Closing Main 
+Wed Oct 12 11:27:29 2022 [INFO]: Entering Main 
+Wed Oct 12 11:27:29 2022 [INFO]: Entering OpenSocket 
+Wed Oct 12 11:27:29 2022 [INFO]: Entering BindData 
+Wed Oct 12 11:27:29 2022 [INFO]: Entering Listen 
+Wed Oct 12 11:27:29 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:27:34 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:27:35 2022 [INFO]: Entering Registration Main 
+Wed Oct 12 11:28:47 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:28:47 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:28:54 2022 [INFO]: Closing Main 
+Wed Oct 12 11:30:23 2022 [INFO]: Entering Main 
+Wed Oct 12 11:30:23 2022 [INFO]: Entering OpenSocket 
+Wed Oct 12 11:30:23 2022 [INFO]: Entering BindData 
+Wed Oct 12 11:30:23 2022 [INFO]: Entering Listen 
+Wed Oct 12 11:30:23 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:30:27 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:30:29 2022 [INFO]: Entering Registration Main 
+Wed Oct 12 11:34:08 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:34:25 2022 [INFO]: Entering Main 
+Wed Oct 12 11:34:25 2022 [INFO]: Entering OpenSocket 
+Wed Oct 12 11:34:25 2022 [INFO]: Entering BindData 
+Wed Oct 12 11:34:25 2022 [INFO]: Entering Listen 
+Wed Oct 12 11:34:25 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:34:28 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:34:29 2022 [INFO]: Entering Registration Main 
+Wed Oct 12 11:35:05 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:35:41 2022 [INFO]: Entering Main 
+Wed Oct 12 11:35:41 2022 [INFO]: Entering OpenSocket 
+Wed Oct 12 11:35:41 2022 [INFO]: Entering BindData 
+Wed Oct 12 11:35:41 2022 [INFO]: Entering Listen 
+Wed Oct 12 11:35:41 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:35:45 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:35:47 2022 [INFO]: Entering Registration Main 
+Wed Oct 12 11:36:10 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:36:59 2022 [INFO]: Entering login Main 
+Wed Oct 12 11:37:09 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:37:13 2022 [INFO]: Entering Registration Main 
+Wed Oct 12 11:38:07 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:38:11 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:38:16 2022 [INFO]: Closing Main 
+Wed Oct 12 11:40:39 2022 [INFO]: Entering Main 
+Wed Oct 12 11:40:39 2022 [INFO]: Entering OpenSocket 
+Wed Oct 12 11:40:39 2022 [INFO]: Entering BindData 
+Wed Oct 12 11:40:39 2022 [INFO]: Entering Listen 
+Wed Oct 12 11:40:39 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:40:41 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:40:42 2022 [INFO]: Entering Registration Main 
+Wed Oct 12 11:41:05 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:41:11 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:41:20 2022 [INFO]: Closing Main 
+Wed Oct 12 11:42:40 2022 [INFO]: Entering Main 
+Wed Oct 12 11:42:40 2022 [INFO]: Entering OpenSocket 
+Wed Oct 12 11:42:40 2022 [INFO]: Entering BindData 
+Wed Oct 12 11:42:40 2022 [INFO]: Entering Listen 
+Wed Oct 12 11:42:40 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:42:45 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:42:47 2022 [INFO]: Entering Registration Main 
+Wed Oct 12 11:43:16 2022 [INFO]: Entering ReadData 
+Wed Oct 12 11:43:31 2022 [INFO]: Entering Accept 
+Wed Oct 12 11:43:34 2022 [INFO]: Closing Main 
+Wed Oct 12 12:09:41 2022 [INFO]: Entering Main 
+Wed Oct 12 12:09:41 2022 [INFO]: Entering OpenSocket 
+Wed Oct 12 12:09:41 2022 [INFO]: Entering BindData 
+Wed Oct 12 12:09:41 2022 [INFO]: Entering Listen 
+Wed Oct 12 12:09:41 2022 [INFO]: Entering Accept 
+Wed Oct 12 12:09:44 2022 [INFO]: Entering ReadData 
+Wed Oct 12 12:09:46 2022 [INFO]: Entering Registration Main 
+Wed Oct 12 12:10:16 2022 [INFO]: Entering ReadData 
+Wed Oct 12 12:10:41 2022 [INFO]: Entering login Main 
+Wed Oct 12 12:10:49 2022 [INFO]: Entering ReadData 
+Wed Oct 12 12:11:17 2022 [INFO]: Entering Accept 
+Wed Oct 12 12:11:20 2022 [INFO]: Closing Main 
+Wed Oct 12 12:12:34 2022 [INFO]: Entering Main 
+Wed Oct 12 12:12:34 2022 [INFO]: Entering OpenSocket 
+Wed Oct 12 12:12:34 2022 [INFO]: Entering BindData 
+Wed Oct 12 12:12:34 2022 [INFO]: Entering Listen 
+Wed Oct 12 12:12:34 2022 [INFO]: Entering Accept 
+Wed Oct 12 12:12:36 2022 [INFO]: Entering ReadData 
+Wed Oct 12 12:12:39 2022 [INFO]: Entering login Main 
+Wed Oct 12 12:12:58 2022 [INFO]: Entering ReadData 
+Wed Oct 12 12:13:02 2022 [INFO]: Entering login Main 
+Wed Oct 12 12:13:11 2022 [INFO]: Entering ReadData 
+Wed Oct 12 12:15:21 2022 [INFO]: Entering Accept 
+Wed Oct 12 12:15:24 2022 [INFO]: Closing Main 
+Wed Oct 12 12:21:23 2022 [INFO]: Entering Main 
+Wed Oct 12 12:21:23 2022 [INFO]: Entering OpenSocket 
+Wed Oct 12 12:21:23 2022 [INFO]: Entering BindData 
+Wed Oct 12 12:21:23 2022 [INFO]: Entering Listen 
+Wed Oct 12 12:21:23 2022 [INFO]: Entering Accept 
+Wed Oct 12 12:21:29 2022 [INFO]: Entering ReadData 
+Wed Oct 12 12:21:31 2022 [INFO]: Entering login Main 
+Wed Oct 12 12:22:21 2022 [INFO]: Entering ReadData 
+Wed Oct 12 12:22:37 2022 [INFO]: Entering login Main 
+Wed Oct 12 12:22:56 2022 [INFO]: Entering ReadData 
+Wed Oct 12 12:22:59 2022 [INFO]: Entering Accept 
+Wed Oct 12 12:23:07 2022 [INFO]: Closing Main 
+Wed Oct 12 12:39:00 2022 [INFO]: Entering Main 
+Wed Oct 12 12:39:00 2022 [INFO]: Entering OpenSocket 
+Wed Oct 12 12:39:00 2022 [INFO]: Entering BindData 
+Wed Oct 12 12:39:00 2022 [INFO]: Entering Listen 
+Wed Oct 12 12:39:00 2022 [INFO]: Entering Accept 
+Wed Oct 12 12:39:03 2022 [INFO]: Entering ReadData 
+Wed Oct 12 12:39:04 2022 [INFO]: Entering login Main 
+Wed Oct 12 12:39:17 2022 [INFO]: Entering ReadData 
+Wed Oct 12 12:39:33 2022 [INFO]: Entering login Main 
+Wed Oct 12 12:39:36 2022 [INFO]: Entering ReadData 
+Wed Oct 12 12:39:40 2022 [INFO]: Entering Accept 
+Wed Oct 12 12:39:44 2022 [INFO]: Entering ReadData 
+Wed Oct 12 12:39:46 2022 [INFO]: Entering login Main 
+Wed Oct 12 12:40:03 2022 [INFO]: Entering ReadData 
+Wed Oct 12 12:40:06 2022 [INFO]: Entering Accept 
+Wed Oct 12 12:40:12 2022 [INFO]: Closing Main 
+Wed Oct 12 12:44:13 2022 [INFO]: Entering Main 
+Wed Oct 12 12:44:13 2022 [INFO]: Entering OpenSocket 
+Wed Oct 12 12:44:13 2022 [INFO]: Entering BindData 
+Wed Oct 12 12:44:13 2022 [INFO]: Entering Listen 
+Wed Oct 12 12:44:13 2022 [INFO]: Entering Accept 
+Wed Oct 12 12:44:16 2022 [INFO]: Entering ReadData 
+Wed Oct 12 12:44:17 2022 [INFO]: Entering Registration Main 
+Wed Oct 12 12:44:37 2022 [INFO]: Entering ReadData 
+Wed Oct 12 12:45:27 2022 [INFO]: Entering Main 
+Wed Oct 12 12:45:27 2022 [INFO]: Entering OpenSocket 
+Wed Oct 12 12:45:27 2022 [INFO]: Entering BindData 
+Wed Oct 12 12:45:27 2022 [INFO]: Entering Listen 
+Wed Oct 12 12:45:27 2022 [INFO]: Entering Accept 
+Wed Oct 12 12:45:30 2022 [INFO]: Entering ReadData 
+Wed Oct 12 12:45:31 2022 [INFO]: Entering login Main 
+Wed Oct 12 12:45:38 2022 [INFO]: Entering ReadData 
+Wed Oct 12 12:45:41 2022 [INFO]: Entering login Main 
+Wed Oct 12 12:45:53 2022 [INFO]: Entering ReadData 
+Wed Oct 12 12:45:58 2022 [INFO]: Entering Accept 
+Wed Oct 12 12:46:03 2022 [INFO]: Closing Main 

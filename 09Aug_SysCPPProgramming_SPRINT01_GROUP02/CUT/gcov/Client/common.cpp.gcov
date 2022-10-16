@@ -1,0 +1,1151 @@
+        -:    0:Source:src/common.cpp
+        -:    1:
+        -:    2:/**********************************************************************************
+        -:    3:                       INCLUSION HEADER FILES
+        -:    4:***********************************************************************************/
+        -:    5:
+        -:    6:#include <common.h>
+        -:    7:#include <logger.h>
+        -:    8:
+    #####:    9:void CFSS_SOCKET::IPValidation(string ip)
+        -:   10:{
+    #####:   11:	string validIp = ip;
+        -:   12:	int i;
+    #####:   13:	int count = 0;
+    #####:   14:	for(int j = 0; j<validIp.length();j++)
+        -:   15:	{
+    #####:   16:		if(validIp[j] == '.')
+    #####:   17:			count++;
+        -:   18:	}
+    #####:   19:	if(count != 3)
+        -:   20:	{
+    #####:   21:		cout<<"Invalid IP"<<endl;
+    #####:   22:		_exit(EXIT_FAILURE);
+        -:   23:	}
+        -:   24:	else
+        -:   25:	{
+        -:   26:	
+    #####:   27:		int p = validIp.find(".");
+    #####:   28:		string a = validIp.substr(0,p);
+    #####:   29:		int q = validIp.find(".", p+1);
+    #####:   30:		int r = validIp.find(".",q+1);
+    #####:   31:		string b= validIp.substr(p+1, q-p-1);
+    #####:   32:		string c = validIp.substr(q+1,r-q-1);
+    #####:   33:		string d = validIp.substr(r+1);
+    #####:   34:		vector<string> val;
+    #####:   35:		val.push_back(a);
+    #####:   36:		val.push_back(b);
+    #####:   37:		val.push_back(c);
+    #####:   38:		val.push_back(d);
+    #####:   39:		for(auto e: val)
+        -:   40:		{
+        -:   41:			
+    #####:   42:			for (i = 0; i < e.length(); i++)
+        -:   43:			{
+    #####:   44:				if(!isdigit(e[i]))
+        -:   45:				{
+    #####:   46:					cout<<"Invalid IP"<<endl;
+    #####:   47:					_exit(EXIT_FAILURE);
+        -:   48:					break;
+        -:   49:				}
+    #####:   50:				else if(stoi(e) <0 ||stoi(e)>255)
+        -:   51:				{		
+    #####:   52:					cout<<"Invalid IP"<<endl;
+    #####:   53:					_exit(EXIT_FAILURE);
+        -:   54:					break;
+        -:   55:				}
+        -:   56:			}
+        -:   57:		}
+        -:   58:	}      	
+        -:   59:
+    #####:   60:}
+    #####:   61:void CFSS_SOCKET::PortValidation(char* portN)
+        -:   62:{
+    #####:   63:	int n = strlen(portN);
+    #####:   64:	for(int i = 0; i<n; i++)
+        -:   65:	{
+    #####:   66:		if(isdigit(portN[i])==0)
+        -:   67:		{
+    #####:   68:			cout<<"Invalid Port Number"<<endl;
+        -:   69:			//return false;
+    #####:   70:			_exit(EXIT_FAILURE);
+        -:   71:			break;
+        -:   72:		}
+    #####:   73:		else if(stoi(portN) < 0 || stoi(portN) >65535)
+        -:   74:		{
+    #####:   75:			cout<<"Invalid port number"<<endl;
+        -:   76:			//return false;
+    #####:   77:			_exit(EXIT_FAILURE);
+        -:   78:			break;
+        -:   79:		}
+        -:   80:		//else
+        -:   81:		//	return true;
+        -:   82:	}
+    #####:   83:}
+        -:   84:
+        -:   85://constructor to set default values
+        1:   86:CFSS_SOCKET::CFSS_SOCKET()
+        -:   87:{	
+        1:   88:	ServerFD=0;
+        1:   89:	strcpy(ipaddr,"0.0.0.0");
+        1:   90:	portNo = 0;
+        1:   91:}
+        -:   92:
+        1:   93:CFSS_SOCKET::~CFSS_SOCKET()
+        -:   94:{
+        -:   95:	
+        1:   96:}
+        -:   97:
+        -:   98://connection of client to server 
+        1:   99:int CFSS_SOCKET::ConnectClient(char **argv)
+        -:  100:{
+        1:  101:	len = sizeof(server_addr);
+        1:  102:	client_len = sizeof(client_addr);
+        1:  103:	ServerFD = socket(AF_INET, SOCK_STREAM, 0);
+        1:  104:	if(ServerFD<0)
+        -:  105:	{
+    #####:  106:		perror("socket() ");
+    #####:  107:		log(3, ERROR, "socket creation", "ConnectClient");
+    #####:  108:		_exit(EXIT_FAILURE);
+        -:  109:	}
+        1:  110:	bzero(&server_addr, sizeof(SA_IN));
+        -:  111:
+        1:  112:	portNo = atoi(argv[2]);
+        1:  113:	strcpy(ipaddr, argv[1]);
+        -:  114:
+        1:  115:	server_addr.sin_family = AF_INET;
+        1:  116:	server_addr.sin_port = htons(portNo);
+        1:  117:	server_addr.sin_addr.s_addr = inet_addr(ipaddr);
+        -:  118:
+        1:  119:	cout<<"Client Socket Created Successfully!!!!"<<endl;
+        -:  120:
+        1:  121:	if(connect(ServerFD, (struct sockaddr*)&server_addr, sizeof(struct sockaddr_in))<0)
+        -:  122:	{
+    #####:  123:		perror("connect() here ");
+    #####:  124:		log(3, ERROR, "Connection failure", "ConnectClient");
+    #####:  125:		exit(EXIT_FAILURE);
+        -:  126:	}
+        -:  127:
+        1:  128:	cout<<"New client connected to the Server"<<endl;
+        -:  129:
+        1:  130:	return ServerFD;
+        -:  131:}
+        -:  132:
+        -:  133:
+        -:  134://connection to the client 
+    #####:  135:void CFSS_SOCKET::ConnectServer(char **argv)
+        -:  136:{	
+    #####:  137:	log(3, INFO, "Entering", "OpenSocket");
+    #####:  138:	len = sizeof(server_addr);
+    #####:  139:	client_len = sizeof(client_addr);
+    #####:  140:	ServerFD = socket(AF_INET, SOCK_STREAM, 0);
+    #####:  141:	if(ServerFD<0)
+        -:  142:	{	
+    #####:  143:		log(3, ERROR, "socket creation", "ConnectServer");
+    #####:  144:		perror("socket() ");
+    #####:  145:		_exit(EXIT_FAILURE);
+        -:  146:	}
+    #####:  147:	bzero(&server_addr, sizeof(SA_IN));
+        -:  148:
+    #####:  149:	portNo = atoi(argv[2]);
+    #####:  150:	strcpy(ipaddr, argv[1]);
+        -:  151:
+    #####:  152:	server_addr.sin_family = AF_INET;
+    #####:  153:	server_addr.sin_port = htons(portNo);
+    #####:  154:	server_addr.sin_addr.s_addr = inet_addr(ipaddr);
+        -:  155:
+    #####:  156:	cout<<"Server Socket Created Successfully!!!!"<<endl;
+        -:  157:
+    #####:  158:	if(bind(ServerFD,(struct sockaddr*)&server_addr,sizeof(struct sockaddr_in))<0)
+        -:  159:	{
+    #####:  160:		perror("bind() ");
+    #####:  161:		log(3, ERROR, "Binding failed", "ConnectServer");
+    #####:  162:		exit(EXIT_FAILURE);
+        -:  163:	}
+    #####:  164:	log(3, INFO, "Entering", "BindData");
+    #####:  165:	cout<<"Binding done"<<endl;
+        -:  166:
+    #####:  167:	if(listen(ServerFD, 5)==0)
+    #####:  168:		cout<<"Listening...."<<endl;
+        -:  169:	else
+        -:  170:		{
+    #####:  171:			cout<<"Error in listening...."<<endl;
+    #####:  172:			log(3, ERROR, "Listening failed", "ConnectServer");
+        -:  173:		}
+    #####:  174:	log(3, INFO, "Entering", "Listen");
+        -:  175:	//return ServerFD;
+    #####:  176:}
+        -:  177://create a new socket descriptor and  and this sd is returned to the caller 
+    #####:  178:int CFSS_SOCKET::ClientAccept()
+        -:  179:{	
+    #####:  180:	log(3, INFO, "Entering", "Accept");
+    #####:  181:	int clientfd = accept(ServerFD,(struct sockaddr*)&client_addr, &client_len);
+    #####:  182:	if(clientfd < 0)
+        -:  183:	{
+    #####:  184:		perror("accept() ");
+    #####:  185:		log(3, ERROR, "Accepting client failed", "ConnectServer");
+    #####:  186:		exit(EXIT_FAILURE);
+        -:  187:	}
+    #####:  188:	cout<<"Server accepted the new Client"<<endl;
+    #####:  189:	ClientFD=clientfd;
+    #####:  190:	return clientfd;
+        -:  191:
+        -:  192:}
+        -:  193:
+        -:  194://Send message form client to server 
+        3:  195:int CFSS_SOCKET::SendToS(char *msg)
+        -:  196:{	
+        -:  197:
+        3:  198:	int ret =sendto(ServerFD,msg,MAX_BUFF,0,(struct sockaddr*)&server_addr,len); 
+        3:  199:	if(ret<0)
+        -:  200:        {
+    #####:  201:            perror("sendto() ");
+    #####:  202:			log(3, ERROR, "Message not send", "SendToS");
+        -:  203:
+    #####:  204:		exit(EXIT_FAILURE);
+        -:  205:        }
+        3:  206:	cout<<"Message sent to the server"<<endl;
+        3:  207:return 1;
+        -:  208:}
+        -:  209:
+        -:  210://Server receives message form Client 
+    #####:  211:string CFSS_SOCKET::ReceiveFromC()
+        -:  212:{	
+    #####:  213:	log(3, INFO, "Entering", "ReadData");
+    #####:  214:	char msg[MAX_BUFF]={'\0',};
+    #####:  215:	int ret=recvfrom(ClientFD,msg,MAX_BUFF, 0, (struct sockaddr*)&client_addr, &len);
+        -:  216:	
+    #####:  217:	if(ret<0)
+        -:  218:        {
+    #####:  219:            perror("recvfrom() ");
+    #####:  220:			log(3, ERROR, "Message not received", "ReceiveFromC");
+    #####:  221:			exit(EXIT_FAILURE);
+        -:  222:		}
+        -:  223:
+    #####:  224:	cout<<"Client: "<<msg<<endl;
+    #####:  225:	return string(msg);
+        -:  226:}
+        -:  227://Send message form Server to client 
+    #####:  228:int CFSS_SOCKET::SendToC(char *msg)
+        -:  229:{
+    #####:  230:	int ret =sendto(ClientFD,msg,MAX_BUFF,0,(struct sockaddr*)&server_addr,len); 
+    #####:  231:	if(ret<0)
+        -:  232:        {
+    #####:  233:            perror("sendto() ");
+    #####:  234:			log(3, ERROR, "Message not send", "SendToC");
+    #####:  235:       		exit(EXIT_FAILURE);
+        -:  236:       	}
+    #####:  237:	cout<<"Server: "<<msg<<endl;
+    #####:  238:return 1;
+        -:  239:}
+        -:  240:
+        -:  241://Client received message form server  
+        5:  242:string CFSS_SOCKET::ReceiveFromS()
+        -:  243:{
+        5:  244:	char msg[MAX_BUFF]={'\0',};
+        5:  245:	int ret=recvfrom(ServerFD,msg,MAX_BUFF, 0, (struct sockaddr*)&client_addr, &len);
+        -:  246:	
+        5:  247:	if(ret<0)
+        -:  248:    {
+    #####:  249:        perror("recvfrom() ");
+    #####:  250:		log(3, ERROR, "Message not received", "ReceiveFromS");
+    #####:  251:		exit(EXIT_FAILURE);
+        -:  252:	}
+        -:  253:
+        -:  254:	//cout<<"Client: Messgae form server: "<<msg<<endl;
+        5:  255:	return string(msg);
+        -:  256:	
+        -:  257:}
+        -:  258:
+        -:  259:
+        1:  260:void CFSS_SOCKET::ClosesServer()
+        -:  261:{
+        1:  262:	close(ServerFD);
+        1:  263:}
+        -:  264:
+    #####:  265:void CFSS_SOCKET::ClosesClientFD()
+        -:  266:{
+    #####:  267:	close(ClientFD);
+    #####:  268:}
+        -:  269:
+    #####:  270:void Login::createLogin(Login &L)
+        -:  271:{
+    #####:  272:	fstream fs;
+    #####:  273:	fs.open(LOGIN,ios::app|ios::out|ios::binary);
+    #####:  274:	if(!fs){
+    #####:  275:		cout<<"Login file open error"<<endl;
+        -:  276:	}
+        -:  277:	else{
+    #####:  278:		fs.write(reinterpret_cast<char*>(&L), sizeof(L));
+    #####:  279:		fs.close();
+        -:  280:	}
+    #####:  281:}
+        -:  282:
+    #####:  283:void Login::setmobNo(char *ph)
+        -:  284:{
+        -:  285:
+    #####:  286:int len = strlen(ph);
+    #####:  287:int flag = 1;
+        -:  288:
+    #####:  289:for(int i=0;i<len;i++){
+    #####:  290:	if(isdigit(ph[i])==0){
+        -:  291:
+    #####:  292:		cout<<"Invalid input. Enter digits only"<<endl;
+    #####:  293:		flag=0;
+    #####:  294:		break;
+        -:  295:	}
+    #####:  296:	else if(len!=10){
+    #####:  297:		cout<<"Invalid mobile number"<<endl;
+    #####:  298:		flag=0;
+    #####:  299:		break;
+        -:  300:		
+        -:  301:	}
+        -:  302:	else{
+    #####:  303:		continue;
+        -:  304:	}
+        -:  305:
+        -:  306:}
+        -:  307:
+        -:  308:
+    #####:  309:if(flag==0){
+        -:  310:
+        -:  311:	char phone[11];
+    #####:  312:	cout<<"Renter the number"<<endl;
+    #####:  313:	cin>>phone;
+    #####:  314:	setmobNo(phone);
+        -:  315:
+        -:  316:}
+        -:  317:else{
+    #####:  318:	strcpy(mobNo,ph);
+        -:  319:}
+    #####:  320:}
+        -:  321:
+        2:  322:int Login::signin(char *ph,char *pw)
+        -:  323:{
+        4:  324:	fstream fs;
+        2:  325:	Login L;
+        2:  326:	int flag=0;
+        2:  327:	fs.open(LOGIN,ios::in|ios::binary);
+        2:  328:	if(!fs){
+        1:  329:		cout<<"Login file open error"<<endl;
+        1:  330:		return 0;
+        -:  331:	}
+        -:  332:	else{
+        2:  333:	while(!fs.eof()){
+        -:  334:
+        2:  335:		fs.read(reinterpret_cast<char*>(&L), sizeof(L));
+        2:  336:		cout<<getmobNo()<<endl;
+        2:  337:		cout<<getpasswd()<<endl;
+        -:  338:		
+        2:  339:		if(strcmp(L.getmobNo(),ph)==0 && strcmp(L.getpasswd(),pw)==0)
+        -:  340:		{
+        1:  341:				cout<<"Login class confirm succesful login"<<endl;
+        1:  342:				flag=1;
+        1:  343:				break;
+        -:  344:		}
+        -:  345:		else{
+        1:  346:			flag=0;
+        -:  347:		}
+        -:  348:
+        -:  349:	}
+        -:  350:
+        1:  351:	fs.close();
+        -:  352:	}
+        1:  353:	return flag;
+        -:  354:	
+        -:  355:}
+        -:  356:
+    #####:  357:void Registration::registeruser()
+        -:  358:{
+    #####:  359:	fstream fs;
+        -:  360:
+        -:  361:	/*fs.open(LOGIN,ios::app);
+        -:  362:	if(!fs)
+        -:  363:	{
+        -:  364:		cout<<"Login file open error"<<endl;
+        -:  365:
+        -:  366:	}
+        -:  367:	else{
+        -:  368:
+        -:  369:		fs<<phoneNo<<","<<passwd<<endl;
+        -:  370:	}
+        -:  371:	fs.close();*/
+        -:  372:
+    #####:  373:	fs.open(Database,ios::app);
+    #####:  374:	if(!fs)
+        -:  375:	{
+    #####:  376:		cout<<"databse file open error"<<endl;
+        -:  377:
+        -:  378:	}
+        -:  379:	else
+        -:  380:	{
+        -:  381:		
+    #####:  382:		fs<<phoneNo<<","<<serv<<","<<type<<","<<callstatus<<","<<desti<<endl;
+        -:  383:	}
+    #####:  384:	fs.close();
+        -:  385:
+        -:  386:
+        -:  387:
+    #####:  388:}
+        -:  389:
+    #####:  390:void Registration::clientstatus(){
+        -:  391:
+    #####:  392:	fstream fs;
+    #####:  393:	fs.open(Clientstatus,ios::app|ios::out);
+    #####:  394:	if(!fs)
+        -:  395:	{
+    #####:  396:		log(3, ERROR, "File not opened", "clientstatus");
+    #####:  397:		cout<<"Client status file open error"<<endl;
+        -:  398:	}
+        -:  399:	else{
+        -:  400:
+    #####:  401:		fs<<phoneNo<<","<<clientst<<endl;
+        -:  402:	}
+        -:  403:
+    #####:  404:}
+    #####:  405:void Registration::settype(char *t)
+        -:  406:{
+    #####:  407:	int ty = stoi(t);
+    #####:  408:	if(ty >3 || ty <1 )
+        -:  409:	{
+    #####:  410:		cout<<"Invalid Entry. Re-enter"<<endl;
+        -:  411:		char typ[2];
+    #####:  412:		cin>>typ;
+    #####:  413:		settype(typ);
+        -:  414:																
+        -:  415:	}
+        -:  416:	else
+    #####:  417:		strcpy(type, t);
+    #####:  418:}
+        -:  419:
+    #####:  420:void Registration::setcallstatus(char *st)
+        -:  421:{
+    #####:  422:	int sta = stoi(st);	
+    #####:  423:	if(sta > 3 || sta <1)
+        -:  424:	{
+    #####:  425:		cout<<"Invalid Entry. Re-enter"<<endl;
+        -:  426:		char stat[2];
+    #####:  427:		cin>>stat;
+    #####:  428:		setcallstatus(stat);
+        -:  429:	}
+        -:  430:	else
+    #####:  431:		strcpy(callstatus, st);
+    #####:  432:}
+    #####:  433:void Registration::setservice(char* ser)
+        -:  434:{
+    #####:  435:	int se = stoi(ser);		
+    #####:  436:	if(se < 0 || se > 1)
+        -:  437:	{
+    #####:  438:		cout<<"Invalid Entry. Re-enter"<<endl;
+        -:  439:		char _s[2];
+    #####:  440:		cin>>_s;
+    #####:  441:		setservice(_s);
+        -:  442:	}	
+        -:  443:	else
+        -:  444:	{
+    #####:  445:		strcpy(serv,ser);
+        -:  446:	}
+    #####:  447:}
+        -:  448:
+    #####:  449:void Login::setpasswd(char *pass)
+        -:  450:{
+        -:  451:
+    #####:  452:	int n = strlen(pass);
+        -:  453:
+    #####:  454:	bool hasLower = false, hasUpper = false;
+    #####:  455:	bool hasDigit = false;
+        -:  456:
+    #####:  457:	for (int i = 0; i < n; i++)
+        -:  458:	{
+    #####:  459:		if (islower(pass[i]))
+    #####:  460:		hasLower = true;
+    #####:  461:		if (isupper(pass[i]))
+    #####:  462:		hasUpper = true;
+    #####:  463:		if (isdigit(pass[i]))
+    #####:  464:		hasDigit = true;
+        -:  465:													
+        -:  466:	}
+    #####:  467:	if(hasLower && hasUpper && hasDigit && (n >= 7))
+        -:  468:	{
+    #####:  469:		strcpy(passwd, pass);
+        -:  470:	}
+        -:  471:	else
+        -:  472:	{
+        -:  473:		char *p ;
+    #####:  474:		p = getpass("Enter a Strong Password(Atleast 7 charecters long and should include atleast one Uppercase, Lowercase and a numerical)\n");
+        -:  475:													
+    #####:  476:		setpasswd(p);
+        -:  477:	}
+        -:  478:						
+    #####:  479:}
+        -:  480:
+    #####:  481:void Registration::setclientst(char* st)
+        -:  482:{
+    #####:  483:	int sta = stoi(st);
+    #####:  484:	if(sta < 0 || sta > 1)
+        -:  485:	{
+    #####:  486:		cout<<"Invalid Entry. Re-enter"<<endl;
+        -:  487:		char _cs[2];
+    #####:  488:		cin>>_cs;
+    #####:  489:		setclientst(_cs);
+        -:  490:	}	
+        -:  491:	else
+    #####:  492:		strcpy(clientst,st);
+    #####:  493:}
+        -:  494:
+    #####:  495:void Registration::setdest(char *dest)
+        -:  496:{
+        -:  497:
+    #####:  498:	int len = strlen(dest);
+    #####:  499:	int flag = 1;
+        -:  500:
+    #####:  501:	for(int i=0;i<len;i++)
+        -:  502:	{
+    #####:  503:		if(isdigit(dest[i])==0)
+        -:  504:		{
+        -:  505:
+    #####:  506:			cout<<"Invalid input. Enter digits only"<<endl;
+    #####:  507:			flag=0;
+    #####:  508:			break;
+        -:  509:		}
+    #####:  510:		else if(len!=10)
+        -:  511:		{
+    #####:  512:			cout<<"Invalid mobile number"<<endl;
+    #####:  513:			flag=0;
+    #####:  514:			break;
+        -:  515:													
+        -:  516:		}
+        -:  517:		else
+        -:  518:		{
+    #####:  519:			continue;
+        -:  520:		}
+        -:  521:
+        -:  522:	}
+        -:  523:
+        -:  524:
+    #####:  525:	if(flag==0)
+        -:  526:	{
+        -:  527:
+        -:  528:		char des[11];
+    #####:  529:		cout<<"Renter the number"<<endl;
+    #####:  530:		cin>>des;
+    #####:  531:		setdest(des);
+        -:  532:
+        -:  533:	}
+        -:  534:	else
+        -:  535:	{
+    #####:  536:		strcpy(desti,dest);
+        -:  537:	}
+        -:  538:
+    #####:  539:}
+        -:  540:
+    #####:  541:void Registration::setphoneNo(char *ph)
+        -:  542:{
+        -:  543:
+    #####:  544:int len = strlen(ph);
+    #####:  545:int flag = 1;
+        -:  546:
+    #####:  547:for(int i=0;i<len;i++){
+    #####:  548:	if(isdigit(ph[i])==0){
+        -:  549:
+    #####:  550:		cout<<"Invalid input. Enter digits only"<<endl;
+    #####:  551:		log(3, DEBUG, "Invalid Input", "setphoneNo");
+    #####:  552:		flag=0;
+    #####:  553:		break;
+        -:  554:	}
+    #####:  555:	else if(len!=10){
+    #####:  556:		cout<<"Invalid mobile number"<<endl;
+    #####:  557:		log(3, DEBUG, "Invalid mobile number", "setphoneNo");
+    #####:  558:		flag=0;
+    #####:  559:		break;
+        -:  560:		
+        -:  561:	}
+        -:  562:	else{
+    #####:  563:		continue;
+        -:  564:	}
+        -:  565:
+        -:  566:}
+        -:  567:
+        -:  568:
+    #####:  569:if(flag==0){
+        -:  570:
+        -:  571:	char phone[11];
+    #####:  572:	cout<<"Renter the number"<<endl;
+    #####:  573:	cin>>phone;
+    #####:  574:	setphoneNo(phone);
+        -:  575:
+        -:  576:}
+        -:  577:else{
+    #####:  578:	strcpy(phoneNo,ph);
+        -:  579:}
+        -:  580:
+    #####:  581:}
+        1:  582:int Existing::IsRegistered(string mob)
+        -:  583:{
+        1:  584:	log(3, INFO, "Entering", "IsRegistered");
+        1:  585:	int isRegistered = 0;
+        2:  586:	string msg;
+        -:  587:
+        2:  588:    fstream fd;
+        -:  589:	// Opening the File
+        1:  590:	fd.open(Database,ios::in);
+        1:  591:	if(!fd)
+        -:  592:	{
+    #####:  593:		cout<<"Cant open file!"<<endl;
+    #####:  594:		log(3, ERROR, "File not opened", "IsRegistered");
+    #####:  595:		exit(EXIT_FAILURE);
+        -:  596:	}
+        -:  597:
+        -:  598:
+        2:  599:	string line;
+        2:  600:	string mnumber;
+        -:  601:	
+        7:  602:	while(getline(fd,line))
+        -:  603:	{
+        -:  604:		//cout<<"displaying data"<<line<<endl;
+        6:  605:		int a= line.find(",");
+        6:  606:		mnumber= line.substr(0,a);
+        -:  607:
+        -:  608:		//cout<<mnumber<<endl;
+        -:  609:	// Compare Mobile Number with each Number in File
+        6:  610:		if(mob == mnumber) {
+        1:  611:			isRegistered = 1;
+        -:  612:		}
+        -:  613:	}
+        -:  614:	
+        1:  615:	if (isRegistered == 1) {
+        -:  616:		
+        -:  617:		// If Number is Registered
+        1:  618:		fd.close();
+        1:  619:		return 1;
+        -:  620:	
+        -:  621:	} 
+    #####:  622:	else if (isRegistered == 0) {
+        -:  623:
+        -:  624:		// If Number is Not Registered
+    #####:  625:		fd.close();
+    #####:  626:		return 0;
+        -:  627:	}
+    #####:  628:	return 1;
+        -:  629:}
+        -:  630:
+    #####:  631:int Existing::PassCheck(string user, string pw)
+        -:  632:{	
+    #####:  633:	log(3, INFO, "Entering", "PassCheck");
+        -:  634:		
+    #####:  635:	int isCorrect = 0;
+        -:  636:
+    #####:  637:    fstream fd;
+        -:  638:	// Opening the File
+    #####:  639:	fd.open(LOGIN,ios::in);
+    #####:  640:	if(!fd)
+        -:  641:	{
+    #####:  642:		cout<<"Cant open file!"<<endl;
+    #####:  643:		log(3, ERROR, "File not opened", "PassCheck");
+    #####:  644:		exit(EXIT_FAILURE);
+        -:  645:	}
+        -:  646:
+        -:  647:
+    #####:  648:	string line;
+    #####:  649:	string usr,pass;
+        -:  650:	
+    #####:  651:	while(getline(fd,line))
+        -:  652:	{
+    #####:  653:		int a= line.find(",");
+    #####:  654:		usr= line.substr(0,a);
+        -:  655:	
+    #####:  656:		if(user == usr) 
+        -:  657:		{
+    #####:  658:			pass=line.substr(a+1);
+    #####:  659:			if(pw == pass)
+    #####:  660:				isCorrect = 1;
+        -:  661:		}
+        -:  662:	}
+        -:  663:	
+    #####:  664:	if (isCorrect== 0) {
+        -:  665:		
+        -:  666:		// incorrect password
+    #####:  667:		fd.close();
+    #####:  668:		return 0;
+        -:  669:	
+        -:  670:	} 
+    #####:  671:	else if (isCorrect == 1) 
+        -:  672:	{
+        -:  673:
+        -:  674:		// correct
+    #####:  675:		fd.close();
+    #####:  676:		return 1;
+        -:  677:	}
+    #####:  678:	return 1;
+        -:  679:}
+        -:  680:
+        -:  681:// to see current status in database
+        1:  682:void Existing::CurrStatus(string phoneNo)
+        -:  683:{
+        1:  684:	log(3, INFO, "Entering", "CurrStatus");
+        -:  685:
+        2:  686:	fstream fs;
+        1:  687:	fs.open(Database,ios::in|ios::out);
+        -:  688:	
+        1:  689:	int found = 0;
+        -:  690:	
+        2:  691:	vector<string> lines;
+        2:  692:	string line;
+        1:  693:	if(!fs)
+        -:  694:	{
+    #####:  695:		cout<<"File Error"<<endl;
+    #####:  696:		log(3, ERROR, "File not opened", "EnableDis");
+        -:  697:		//return 0;
+        -:  698:	}
+        -:  699:	else
+        -:  700:	{
+        -:  701:
+        -:  702:		//bool isFound = false;
+        -:  703:
+        8:  704:		while(!fs.eof())
+        -:  705:		{	
+        -:  706:
+        7:  707:			getline(fs,line);
+        7:  708:			int a= line.find(",");
+       14:  709:			string PhoneN = line.substr(0,a); // user no.
+        -:  710:
+        -:  711:			
+        7:  712:			if(phoneNo == PhoneN)// found
+        -:  713:				{
+        1:  714:					int b = line.find(",",a+1);
+        2:  715:					string en = line.substr(a+1,b-a-1);	// enable or disable
+        -:  716:
+        1:  717:					int c =line.find(",",b+1);
+        2:  718:					string type = line.substr(b+1,c-b-1); // type stored
+        -:  719:
+        1:  720:					int d =line.find(",",c+1);
+        2:  721:					string stat = line.substr(c+1,d-c-1); // current call status
+        -:  722:
+        2:  723:					string FrdMob = line.substr(c+1); // forwarded no.
+        -:  724:					
+        1:  725:					if(en=="1")
+        1:  726:						cout<<"You have enabled the services"<<endl;
+        -:  727:					else
+    #####:  728:						cout<<"You have disabled the services"<<endl;
+        -:  729:
+        1:  730:					cout<<"Type of Call Forwarding selected is ";
+        -:  731:
+        1:  732:					if(type=="1")
+        1:  733:						cout<<"Unconditional"<<endl;
+    #####:  734:					else if(type=="2")
+    #####:  735:						cout<<"Busy"<<endl;
+        -:  736:					else
+    #####:  737:						cout<<"No Reply"<<endl;
+        -:  738:					/*
+        -:  739:					cout<<"Current Call status is ";
+        -:  740:
+        -:  741:					if(stat=="1")
+        -:  742:						cout<<"Unconditional"<<endl;
+        -:  743:					else if(stat=="2")
+        -:  744:						cout<<"Busy"<<endl;
+        -:  745:					else
+        -:  746:						cout<<"No Reply"<<endl;
+        -:  747:					*/
+        -:  748:				}
+        -:  749:
+        -:  750:		}
+        -:  751:
+        1:  752:		fs.close();
+        -:  753:	}
+        -:  754:
+        -:  755:
+        -:  756:
+        1:  757:}
+    #####:  758:void Existing::EnableDis(string phoneNo)
+        -:  759:{	
+    #####:  760:	log(3, INFO, "Entering", "EnableDis");
+    #####:  761:	string en = "1";
+        -:  762:
+    #####:  763:	fstream fs;
+    #####:  764:	fs.open(Database,ios::in|ios::out);
+        -:  765:	
+    #####:  766:	int found = 0;
+        -:  767:	
+    #####:  768:	vector<string> lines;
+    #####:  769:	string line;
+        -:  770:
+        -:  771:	//cout<<"out enable"<<phoneNo<<endl;
+        -:  772:
+    #####:  773:	if(!fs)
+        -:  774:	{
+    #####:  775:		cout<<"File Error"<<endl;
+    #####:  776:		log(3, ERROR, "File not opened", "EnableDis");
+        -:  777:		//return 0;
+        -:  778:	}
+        -:  779:	else
+        -:  780:	{
+        -:  781:
+        -:  782:		//bool isFound = false;
+        -:  783:
+    #####:  784:		while(!fs.eof())
+        -:  785:		{	
+        -:  786:
+    #####:  787:			getline(fs,line);
+    #####:  788:			int a= line.find(",");
+    #####:  789:			string PhoneN = line.substr(0,a);
+    #####:  790:			int b = line.find(",",a+1);
+    #####:  791:			string status = line.substr(a+1,b-a-1);
+    #####:  792:			string remaining = line.substr(b+1);
+    #####:  793:			string res;
+        -:  794:			//cout<<"in enable"<<PhoneN<<endl;
+    #####:  795:			if(phoneNo != PhoneN)
+        -:  796:				{
+    #####:  797:					lines.push_back(line);
+        -:  798:				}
+    #####:  799:			else if(phoneNo == PhoneN)// found
+        -:  800:				{
+        -:  801:					//int str;
+    #####:  802:					found = 1;
+    #####:  803:					cout<<"Enter 1 to enable or 0 to disable services"<<endl;
+    #####:  804:					cin>>en;
+        -:  805:
+    #####:  806:					res = PhoneN + "," + en + "," + remaining;
+        -:  807:
+    #####:  808:					lines.push_back(res);
+        -:  809:				}
+        -:  810:
+        -:  811:		}
+        -:  812:
+    #####:  813:		fs.close();
+        -:  814:
+    #####:  815:		if(found==0)
+        -:  816:		{
+    #####:  817:			cout<<"Not a registered Number"<<endl;
+        -:  818:		}
+        -:  819:
+        -:  820:		else
+        -:  821:		{	
+    #####:  822:			cout<<"Successfully Updated"<<endl;
+    #####:  823:			ofstream ofs;
+    #####:  824:			ofs.open(Database, std::ofstream::out | std::ofstream::trunc);
+    #####:  825:			ofs.close();
+        -:  826:
+    #####:  827:			ofstream file;
+    #####:  828:			file.open(Database,ios::in|ios::out);
+        -:  829:
+        -:  830:			// writing again
+    #####:  831:			int len=lines.size();
+    #####:  832:			for (int i = 0; i < len; i++)
+        -:  833:  			{
+    #####:  834:				file << lines[i] << endl;
+        -:  835:			}
+        -:  836:
+    #####:  837:			file.close();
+        -:  838:		}
+        -:  839:	}
+        -:  840:	//return 1;
+    #####:  841:}
+    #####:  842:void Existing::TypesRequest(string phoneNo)
+        -:  843:{	
+    #####:  844:	log(3, INFO, "Entering", "TypesRequest");
+        -:  845:	//string phoneNo = "5555";
+    #####:  846:	string type = "1";
+        -:  847:
+    #####:  848:	fstream fs;
+    #####:  849:	fs.open(Database,ios::in|ios::out);
+        -:  850:	
+    #####:  851:	int found = 0;
+        -:  852:	
+    #####:  853:	vector<string> lines;
+    #####:  854:	string line;
+        -:  855:
+    #####:  856:	if(!fs)
+        -:  857:	{
+    #####:  858:		cout<<"File Error"<<endl;
+    #####:  859:		log(3, ERROR, "File not opened", "TypesRequest");
+        -:  860:		//return 0;
+        -:  861:	}
+        -:  862:	else
+        -:  863:	{
+        -:  864:
+    #####:  865:		while(!fs.eof())
+        -:  866:		{	
+        -:  867:
+    #####:  868:			getline(fs,line);
+    #####:  869:			int a= line.find(",");
+    #####:  870:			string PhoneN = line.substr(0,a);
+        -:  871:
+    #####:  872:			int b = line.find(",",a+1);
+    #####:  873:			string en = line.substr(a+1,b-a-1);
+        -:  874:
+    #####:  875:			int c =line.find(",",b+1);
+    #####:  876:			string type = line.substr(b+1,c-b-1);
+        -:  877:
+    #####:  878:			string remaining = line.substr(c+1);
+    #####:  879:			string res;
+        -:  880:
+    #####:  881:			if(phoneNo != PhoneN)
+        -:  882:				{
+    #####:  883:					lines.push_back(line);
+        -:  884:				}
+    #####:  885:			else if(phoneNo == PhoneN)// found
+        -:  886:				{
+        -:  887:					//int str;
+    #####:  888:					found = 1;
+    #####:  889:					cout<<"Enter type of call forwarding \n 1.Unconditional \n 2.Busy \n 3.No reply"<<endl;
+    #####:  890:					cin>>type;
+        -:  891:
+    #####:  892:					res = PhoneN + "," + en + "," + type + "," + remaining;
+        -:  893:					//cout<<"result ="<<res<<endl;
+        -:  894:
+    #####:  895:					lines.push_back(res);
+        -:  896:				}
+        -:  897:
+        -:  898:		}
+        -:  899:
+    #####:  900:		fs.close();
+        -:  901:
+    #####:  902:		if(found==0)
+        -:  903:		{
+    #####:  904:			cout<<"Not a registered Number"<<endl;
+        -:  905:		}
+        -:  906:
+        -:  907:		else
+        -:  908:		{	
+    #####:  909:			cout<<"Successfully Updated"<<endl;
+    #####:  910:			ofstream ofs;
+    #####:  911:			ofs.open(Database, std::ofstream::out | std::ofstream::trunc);
+    #####:  912:			ofs.close();
+        -:  913:
+    #####:  914:			ofstream file;
+    #####:  915:			file.open(Database,ios::in|ios::out);
+        -:  916:
+        -:  917:			// writing again
+    #####:  918:			int len=lines.size();
+    #####:  919:			for (int i = 0; i < len ; i++)
+        -:  920:  			{
+    #####:  921:				file << lines[i] << endl;
+        -:  922:			}
+        -:  923:
+    #####:  924:			file.close();
+        -:  925:		}
+        -:  926:	}
+        -:  927:	//	return 0;
+        -:  928:
+        -:  929:
+        -:  930:	
+    #####:  931:}
+        -:  932:
+    #####:  933:void Existing::Deregister(string phoneNo)
+        -:  934:{
+    #####:  935:	log(3, INFO, "Entering", "Deregister");
+        -:  936:	//string phoneNo = "5555";
+    #####:  937:	string reg = "1";
+        -:  938:
+    #####:  939:	fstream fs;
+    #####:  940:	fs.open(Clientstatus,ios::in|ios::out);
+        -:  941:	
+    #####:  942:	int found = 0;
+        -:  943:	
+    #####:  944:	vector<string> lines;
+    #####:  945:	string line;
+        -:  946:
+    #####:  947:	if(!fs)
+        -:  948:	{
+    #####:  949:		cout<<"File Error"<<endl;
+    #####:  950:		log(3, ERROR, "File not opened", "Deregister");
+        -:  951:		//return 0;
+        -:  952:	}
+        -:  953:	else
+        -:  954:	{
+    #####:  955:		while(!fs.eof())
+        -:  956:		{	
+    #####:  957:			getline(fs,line);
+    #####:  958:			int a= line.find(",");
+    #####:  959:			string PhoneN = line.substr(0,a);
+    #####:  960:			string res;
+        -:  961:
+    #####:  962:			if(phoneNo != PhoneN)
+        -:  963:				{
+    #####:  964:					lines.push_back(line);
+        -:  965:				}
+    #####:  966:			else if(phoneNo == PhoneN)// found
+        -:  967:				{
+        -:  968:					//int str;
+    #####:  969:					found = 1;
+    #####:  970:					cout<<"If you want to Deregister - Enter 0 else 1"<<endl;
+    #####:  971:					cin>>reg;
+        -:  972:
+    #####:  973:					res =PhoneN + "," + reg;
+        -:  974:
+    #####:  975:					lines.push_back(res);
+        -:  976:				}
+        -:  977:
+        -:  978:		}
+        -:  979:
+    #####:  980:		fs.close();
+        -:  981:
+    #####:  982:		if(found==0)
+        -:  983:		{
+    #####:  984:			cout<<"Not a registered Number"<<endl;
+        -:  985:		}
+        -:  986:
+        -:  987:		else
+        -:  988:		{	
+    #####:  989:			cout<<"successfully updated"<<endl;
+    #####:  990:			ofstream ofs;
+    #####:  991:			ofs.open(Clientstatus, std::ofstream::out | std::ofstream::trunc);
+    #####:  992:			ofs.close();
+        -:  993:
+    #####:  994:			ofstream file;
+    #####:  995:			file.open(Clientstatus,ios::in|ios::out);
+        -:  996:
+        -:  997:			// writing again
+    #####:  998:			int len=lines.size();
+    #####:  999:			for (int i = 0; i < len ; i++)
+        -: 1000:  			{
+    #####: 1001:				file << lines[i] << endl;
+        -: 1002:			}
+        -: 1003:
+    #####: 1004:			file.close();
+        -: 1005:		}
+        -: 1006:	}
+        -: 1007:	//	return 0;
+        -: 1008:
+        -: 1009:
+        -: 1010:	
+    #####: 1011:}
+        -: 1012:
+    #####: 1013:string Makecall::makeCall()
+        -: 1014:{
+    #####: 1015:	log(3, INFO, "Entering", "makeCall");
+        -: 1016:	//char msg[MAX_BUFF]={'\0',};
+    #####: 1017:	fstream fs;
+    #####: 1018:	string msg;
+    #####: 1019:	string line;
+    #####: 1020:	int flag=0;
+        -: 1021:
+    #####: 1022:	fs.open(Clientstatus,ios::in);
+    #####: 1023:	if(!fs)
+        -: 1024:	{
+    #####: 1025:		cout<<"Client File error"<<endl;
+    #####: 1026:		log(3, ERROR, "File not opened 1", "makecall");
+    #####: 1027:		exit(EXIT_FAILURE);
+        -: 1028:	}
+        -: 1029:	else
+        -: 1030:	{
+        -: 1031:		
+    #####: 1032:		while(!fs.eof())
+        -: 1033:		{	
+        -: 1034:			char phone[20];
+    #####: 1035:			getline(fs,line);
+    #####: 1036:			int a= line.find(",");
+    #####: 1037:			string PhoneN = line.substr(0,a);
+    #####: 1038:			strcpy(phone,PhoneN.c_str());
+    #####: 1039:			string client_stat = line.substr(a+1);
+    #####: 1040:			if(strcmp(receviver,phone)==0 && client_stat=="1"){
+    #####: 1041:			flag=1;
+        -: 1042:			}
+        -: 1043:		}
+        -: 1044:
+        -: 1045:	}
+    #####: 1046:	fs.close();
+        -: 1047:
+    #####: 1048:	if(flag==1){
+        -: 1049:
+    #####: 1050:	fs.open(Database,ios::in);
+    #####: 1051:	if(!fs)
+        -: 1052:	{
+    #####: 1053:		cout<<"Datafile File Error"<<endl;
+    #####: 1054:		log(3, ERROR, "File not opened 2", "makecall");
+    #####: 1055:		exit(EXIT_FAILURE);
+        -: 1056:	}
+        -: 1057:	else
+        -: 1058:	{
+        -: 1059:		//bool isFound = false;
+    #####: 1060:		string str;
+    #####: 1061:		while(!fs.eof())
+        -: 1062:		{
+        -: 1063:			char phone[20];
+    #####: 1064:			getline(fs,line);
+    #####: 1065:			int a= line.find(",");
+    #####: 1066:			string PhoneN = line.substr(0,a);
+    #####: 1067:			strcpy(phone,PhoneN.c_str());
+    #####: 1068:			int b = line.find(",",a+1);
+    #####: 1069:			string serv_stat = line.substr(a+1,b-a-1);
+    #####: 1070:			int c = line.find(",",b+1);
+    #####: 1071:			string typ = line.substr(b+1,c-b-1);
+    #####: 1072:			int d = line.find(",",c+1);
+    #####: 1073:			string call_st = line.substr(c+1,d-c-1);
+    #####: 1074:			string destination = line.substr(d+1);
+    #####: 1075:			if(typ == "2")
+    #####: 1076:				str = "Busy";
+        -: 1077:
+    #####: 1078:			if(typ == "3")
+    #####: 1079:				str = "No Reply";
+        -: 1080:
+    #####: 1081:			if(typ == "1")
+    #####: 1082:				str = "Unconditional";
+        -: 1083:
+    #####: 1084:			if(strcmp(receviver,phone)==0)
+        -: 1085:			{
+        -: 1086:				//isFound = true;
+    #####: 1087:				if(serv_stat == "1")
+        -: 1088:				{	
+        -: 1089:					
+    #####: 1090:					if(strcmp(typ.c_str(),call_st.c_str())==0)
+        -: 1091:					{
+    #####: 1092:						msg = "Your call has been forwarded to " + destination;
+    #####: 1093:						logger(destination);
+    #####: 1094:						return(msg);
+        -: 1095:
+        -: 1096:					}
+        -: 1097:					else
+        -: 1098:					{
+    #####: 1099:						msg = "The number you are trying to contact is in " + str+" state";
+    #####: 1100:						return(msg);
+        -: 1101:					}
+        -: 1102:				}
+        -: 1103:				else
+        -: 1104:				{
+    #####: 1105:					msg= "Your call is getting connected";
+    #####: 1106:					return(msg);
+        -: 1107:				}
+        -: 1108:			}
+        -: 1109:
+        -: 1110:
+        -: 1111:		}
+        -: 1112:		
+        -: 1113:	}
+        -: 1114:	}
+    #####: 1115:	if(flag==0 )
+        -: 1116:		{
+    #####: 1117:			msg  = "User is not in service";
+    #####: 1118:			return(msg);
+        -: 1119:		}
+        -: 1120:
+    #####: 1121:	fs.close();
+    #####: 1122:	return "";
+        -: 1123:}
+        -: 1124:
+    #####: 1125:void Makecall::setphone(char *p)
+        -: 1126:{
+    #####: 1127:	strcpy(receviver,p);
+    #####: 1128:}
+        -: 1129:
+    #####: 1130:void Makecall::logger(string st)
+        -: 1131:{
+    #####: 1132:	log(3, INFO, "Entering", "logger");
+    #####: 1133:	fstream fs;
+        -: 1134:
+    #####: 1135:	fs.open(Logger,ios::app);
+    #####: 1136:	if(!fs)
+        -: 1137:	{
+    #####: 1138:		cout<<"Login file open error"<<endl;
+    #####: 1139:		log(3, ERROR, "File not opened", "logger");
+        -: 1140:
+        -: 1141:	}
+        -: 1142:	else{
+        -: 1143:
+    #####: 1144:		time_t ttime = time(0);    
+    #####: 1145:		char* dt = ctime(&ttime);
+        -: 1146:
+    #####: 1147:		fs<<receviver<<" call has been forwarded to "<<st<<" on "<<dt<<endl;
+        -: 1148:	}
+    #####: 1149:	fs.close();
+    #####: 1150:}

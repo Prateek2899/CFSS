@@ -1,0 +1,435 @@
+        -:    0:Source:inc/common.h
+        -:    1://////////////////////////////////////////////////////
+        -:    2:// Copyright(C)Future Software Limited,2022
+        -:    3:// Licensee Future Communications Software,2022
+        -:    4:// File/Class Name : CFSS.h
+        -:    5:// Principal Author : Prateek Sharma, Abhishek Kumar Gupta, Alok Kumar, Jinse Thomas, Rahul Dey
+        -:    6:// Subsystem Name : Call Forwarding System Simulator
+        -:    7:// Module Name : Final Sprint
+        -:    8:// Language :C++
+        -:    9:// Target Environment : Linux/Windows
+        -:   10:// Date of First Release : 02-10-2022
+        -:   11:// Author : Prateek Sharma, Abhishek Kumar Gupta, Alok Kumar, Jinse Thomas, Rahul Dey
+        -:   12:// Description : Header file for all our classes and functions
+        -:   13:// Change History: 2
+        -:   14:// Version:v2
+        -:   15:// Date(DD/MM/YYYY): 07-10-2022
+        -:   16:// Modified By: Prateek Sharma, Abhishek Kumar
+        -:   17:// Description of change: Integrating Registration, Existing, MakeCall and Client Server Modules. 
+        -:   18:// Change History : 3
+        -:   19:// Version : v3
+        -:   20:// Date(DD/MM/YYYY) : 10-10-2022
+        -:   21:// Modified by : Alok Kumar
+        -:   22:// Description of change : Complying code with Coding Guidelines.
+        -:   23:///////////////////////////////////////////////////////
+        -:   24:
+        -:   25:/************************************************************************************
+        -:   26:							STANDARD HEADER FILES
+        -:   27:*************************************************************************************/
+        -:   28:#include <iostream>	//Input output purposes
+        -:   29:#include <cstring>	//required for string functions
+        -:   30:#include <sys/socket.h>	//define the sockaddr structure that includes at least the following members: sa_family_t sa_family Address family
+        -:   31:#include <sys/types.h>	//contains a number of basic derived types
+        -:   32:#include <netinet/in.h>	//contains definitions for the internet protocol family
+        -:   33:#include <arpa/inet.h>	//define the INET_ADDRSTRLEN and INET6_ADDRSTRLEN macros
+        -:   34:#include <unistd.h>	//entry point to various constant, type and function declarations
+        -:   35:#include <sys/signal.h>	//for signal handling
+        -:   36:#include<string.h>	//contain classes that are used for exception handling
+        -:   37:#include<fstream>	// Stream class to both read and write from/to files
+        -:   38:#include<ctime>	//used for timestamp
+        -:   39:#include<vector>	//dynamic arrays with the ability to resize itself 
+        -:   40:#include<string>	//for string
+        -:   41:#include<stdlib.h> 
+        -:   42:
+        -:   43:/************************************************************************************
+        -:   44:								MACROS
+        -:   45:*************************************************************************************/
+        -:   46:
+        -:   47:#define MAX_BUFF 1024
+        -:   48:#define PORT 4005
+        -:   49:#define LOGIN "./data/Login.dat"  //stores clients login data
+        -:   50:#define Clientstatus "./data/Clientstatus.txt"  //stores clients service status
+        -:   51:#define Database "./data/Database.txt"  //stores client information
+        -:   52:#define Logger "./data/Logger.txt"
+        -:   53:#define clientlog "./data/clientlog.txt"
+        -:   54:#define serverlog "./data/serverlog.txt"
+        -:   55:
+        -:   56:using namespace std;
+        -:   57:typedef struct sockaddr_in SA_IN;
+        -:   58:
+        -:   59:
+        -:   60:/************************************************************************************
+        -:   61:								 CLASS DECALARATION
+        -:   62:*************************************************************************************/
+        -:   63:
+        -:   64:class CFSS_SOCKET
+        -:   65:{
+        -:   66:public:
+        -:   67:	CFSS_SOCKET();
+        -:   68:	~CFSS_SOCKET();
+        -:   69:	void ConnectServer(char **);   //create connection for server
+        -:   70:	int ConnectClient(char **);   //create connection for client
+        -:   71:	// SA_IN getServerAddr();  
+        -:   72:	// SA_IN getClientAddr();   
+        -:   73:	// socklen_t getLengthAddr();
+        -:   74:
+        -:   75:	////////////////////////////////////////////////////
+        -:   76:	// Function Name: ReceiveFromS
+        -:   77:	// Description : Client receive message from server
+        -:   78:	// Use of Recursion : NA
+        -:   79:	// Returns : string return type
+        -:   80:	////////////////////////////////////////////////////	
+        -:   81:
+        -:   82:	string ReceiveFromS();
+        -:   83:
+        -:   84:	////////////////////////////////////////////////////
+        -:   85:	// Function Name: SendToS
+        -:   86:	// Description : Client send message to server.
+        -:   87:	// Use of Recursion : NA
+        -:   88:	// Returns : integer return type
+        -:   89:	////////////////////////////////////////////////////
+        -:   90:
+        -:   91:	int SendToS(char *);
+        -:   92:
+        -:   93:	////////////////////////////////////////////////////
+        -:   94:	// Function Name: ReceiveFromC
+        -:   95:	// Description : Server receives message form client
+        -:   96:	// Use of Recursion : NA
+        -:   97:	// Returns : string return type
+        -:   98:	////////////////////////////////////////////////////
+        -:   99:
+        -:  100:	string ReceiveFromC();
+        -:  101:
+        -:  102:	////////////////////////////////////////////////////
+        -:  103:	// Function Name: SendToC
+        -:  104:	// Description : server sends message to client
+        -:  105:	// Use of Recursion : NA
+        -:  106:	// Returns : integer return type
+        -:  107:	////////////////////////////////////////////////////
+        -:  108:
+        -:  109:	int SendToC(char *);
+        -:  110:	int getClientSfd();
+        -:  111:
+        -:  112:	////////////////////////////////////////////////////
+        -:  113:	// Function Name: ClientAccept
+        -:  114:	// Description : accepting the connection
+        -:  115:	// Use of Recursion : NA
+        -:  116:	// Returns : integer return type
+        -:  117:	////////////////////////////////////////////////////	
+        -:  118:
+        -:  119:	int ClientAccept();
+        -:  120:
+        -:  121:	////////////////////////////////////////////////////
+        -:  122:	// Function Name: ClosesServer
+        -:  123:	// Description : close client
+        -:  124:	// Use of Recursion : NA
+        -:  125:	// Returns : void
+        -:  126:	////////////////////////////////////////////////////
+        -:  127:
+        -:  128:	void ClosesServer();
+        -:  129:
+        -:  130:	////////////////////////////////////////////////////
+        -:  131:	// Function Name: ClosesClientFD
+        -:  132:	// Description : close server
+        -:  133:	// Use of Recursion : NA
+        -:  134:	// Returns : void
+        -:  135:	////////////////////////////////////////////////////
+        -:  136:
+        -:  137:	void ClosesClientFD();
+        -:  138:
+        -:  139:	////////////////////////////////////////////////////
+        -:  140:	// Function Name: PortValidation
+        -:  141:	// Description : validates the port number
+        -:  142:	// Use of Recursion : NA
+        -:  143:	// Returns : void
+        -:  144:	////////////////////////////////////////////////////
+        -:  145:	
+        -:  146:	void PortValidation(char *);
+        -:  147:
+        -:  148:	////////////////////////////////////////////////////
+        -:  149:	// Function Name: IPValidation
+        -:  150:	// Description : validates the IP address
+        -:  151:	// Use of Recursion : NA
+        -:  152:	// Returns : void
+        -:  153:	////////////////////////////////////////////////////
+        -:  154:
+        -:  155:	void IPValidation(string);
+        -:  156:
+        -:  157:private:
+        -:  158:	int ServerFD;	//server descriptor
+        -:  159:	int ClientFD;   //client descriptor 
+        -:  160:	int portNo;  
+        -:  161:	char ipaddr[20];
+        -:  162:	struct sockaddr_in server_addr;  //server address
+        -:  163:	struct sockaddr_in client_addr;	//client address
+        -:  164:	socklen_t len, client_len;
+        -:  165:};
+        -:  166:
+        -:  167:class Login{
+        -:  168:
+        -:  169:	public:
+        -:  170:
+        -:  171:		////////////////////////////////////////////////////
+        -:  172:		// Function Name: setmobNo
+        -:  173:		// Description : sets phone number
+        -:  174:		// Use of Recursion : NA
+        -:  175:		// Exceptions or Operating System Error Handling: to be done in CPP UNIT Testing
+        -:  176:		// Returns : void
+        -:  177:		////////////////////////////////////////////////////
+        -:  178:
+        -:  179:		void setmobNo(char *);
+        -:  180:
+        -:  181:		////////////////////////////////////////////////////
+        -:  182:		// Function Name: setpasswd
+        -:  183:		// Description : sets password
+        -:  184:		// Use of Recursion : NA
+        -:  185:		// Exceptions or Operating System Error Handling: to be done in CPP UNIT Testing
+        -:  186:		// Returns : void
+        -:  187:		////////////////////////////////////////////////////
+        -:  188:
+        -:  189:		void setpasswd(char *);
+        -:  190:
+        -:  191:		////////////////////////////////////////////////////
+        -:  192:		// Function Name: createLogin
+        -:  193:		// Description : writes slient data in the file 
+        -:  194:		// Use of Recursion : NA
+        -:  195:		// Exceptions or Operating System Error Handling: to be done in CPP UNIT Testing
+        -:  196:		// Returns : void
+        -:  197:		////////////////////////////////////////////////////
+        -:  198:
+        -:  199:		void createLogin(Login &);
+        -:  200:
+        -:  201:		////////////////////////////////////////////////////
+        -:  202:		// Function Name: signin
+        -:  203:		// Description : signin slient 
+        -:  204:		// Use of Recursion : NA
+        -:  205:		// Exceptions or Operating System Error Handling: to be done in CPP UNIT Testing
+        -:  206:		// Returns : void
+        -:  207:		////////////////////////////////////////////////////
+        -:  208:
+        -:  209:		int signin(char* ,char*);
+        -:  210:
+        -:  211:		////////////////////////////////////////////////////
+        -:  212:		// Function Name: getmobNo
+        -:  213:		// Description : gets mobile number
+        -:  214:		// Use of Recursion : NA
+        -:  215:		// Exceptions or Operating System Error Handling: to be done in CPP UNIT Testing
+        -:  216:		// Returns : void
+        -:  217:		////////////////////////////////////////////////////
+        -:  218:
+    #####:  219:		char* getmobNo(){return mobNo;}
+        -:  220:
+        -:  221:		////////////////////////////////////////////////////
+        -:  222:		// Function Name: getpasswd
+        -:  223:		// Description : gets password
+        -:  224:		// Use of Recursion : NA
+        -:  225:		// Exceptions or Operating System Error Handling: to be done in CPP UNIT Testing
+        -:  226:		// Returns : void
+        -:  227:		////////////////////////////////////////////////////
+        -:  228:
+    #####:  229:		char* getpasswd(){return passwd;}
+        -:  230:
+        -:  231:	private:
+        -:  232:
+        -:  233:		char mobNo[11]={'\0'},passwd[20]={'\0'};
+        -:  234:
+        -:  235:};
+        -:  236:class Registration	//for registering a client
+        -:  237:{
+        -:  238:
+        -:  239:	public:
+        -:  240:
+        -:  241:		////////////////////////////////////////////////////
+        -:  242:		// Function Name: registeruser
+        -:  243:		// Description : registers client
+        -:  244:		// Use of Recursion : NA
+        -:  245:		// Exceptions or Operating System Error Handling: to be done in CPP UNIT Testing
+        -:  246:		// Returns : void
+        -:  247:		////////////////////////////////////////////////////
+        -:  248:
+        -:  249:		void registeruser();
+        -:  250:		//void setusername(char * u){strcpy(username,u);}
+        -:  251:		//void setpasswd(char *);	//sets password of client
+        -:  252:
+        -:  253:		////////////////////////////////////////////////////
+        -:  254:		// Function Name: setphoneNo
+        -:  255:		// Description : sets phone number
+        -:  256:		// Use of Recursion : NA
+        -:  257:		// Exceptions or Operating System Error Handling: to be done in CPP UNIT Testing
+        -:  258:		// Returns : void
+        -:  259:		////////////////////////////////////////////////////
+        -:  260:
+        -:  261:		void setphoneNo(char *);
+        -:  262:
+        -:  263:		////////////////////////////////////////////////////
+        -:  264:		// Function Name: settype
+        -:  265:		// Description : sets call forwarding type(unconditional, no reply or busy)
+        -:  266:		// Use of Recursion : NA
+        -:  267:		// Exceptions or Operating System Error Handling: to be done in CPP UNIT Testing
+        -:  268:		// Returns : void
+        -:  269:		////////////////////////////////////////////////////
+        -:  270:
+        -:  271:		void settype(char *);
+        -:  272:
+        -:  273:		////////////////////////////////////////////////////
+        -:  274:		// Function Name: setservice
+        -:  275:		// Description : unables or disables services
+        -:  276:		// Use of Recursion : NA
+        -:  277:		// Exceptions or Operating System Error Handling: to be done in CPP UNIT Testing
+        -:  278:		// Returns : void
+        -:  279:		////////////////////////////////////////////////////
+        -:  280:
+        -:  281:		void setservice(char *);
+        -:  282:
+        -:  283:		////////////////////////////////////////////////////
+        -:  284:		// Function Name: setdest
+        -:  285:		// Description : sets phone number to which call will be forwarding
+        -:  286:		// Use of Recursion : NA
+        -:  287:		// Exceptions or Operating System Error Handling: to be done in CPP UNIT Testing
+        -:  288:		// Returns : void
+        -:  289:		////////////////////////////////////////////////////
+        -:  290:
+        -:  291:		void setdest(char *);
+        -:  292:
+        -:  293:		////////////////////////////////////////////////////
+        -:  294:		// Function Name: setclientst
+        -:  295:		// Description : sets client status to registered or deregistered
+        -:  296:		// Use of Recursion : NA
+        -:  297:		// Exceptions or Operating System Error Handling: to be done in CPP UNIT Testing
+        -:  298:		// Returns : void
+        -:  299:		////////////////////////////////////////////////////
+        -:  300:
+        -:  301:		void setclientst(char *);
+        -:  302:
+        -:  303:		////////////////////////////////////////////////////
+        -:  304:		// Function Name: setcallstatus
+        -:  305:		// Description : sets call status
+        -:  306:		// Use of Recursion : NA
+        -:  307:		// Exceptions or Operating System Error Handling: to be done in CPP UNIT Testing
+        -:  308:		// Returns : void
+        -:  309:		////////////////////////////////////////////////////
+        -:  310:
+        -:  311:		void setcallstatus(char *);
+        -:  312:
+        -:  313:		////////////////////////////////////////////////////
+        -:  314:		// Function Name: clientstatus
+        -:  315:		// Description : shows client status
+        -:  316:		// Use of Recursion : NA
+        -:  317:		// Exceptions or Operating System Error Handling: to be done in CPP UNIT Testing
+        -:  318:		// Returns : void
+        -:  319:		////////////////////////////////////////////////////
+        -:  320:
+        -:  321:		void clientstatus();
+        -:  322:	
+        -:  323:	private:
+        -:  324:
+        -:  325:		//char username[20];
+        -:  326:		char phoneNo[11]={'\0'},type[2]={'\0'},desti[11]={'\0'},serv[2]={'\0'},clientst[2]={'\0'},callstatus[2]={'\0'};
+        -:  327:};
+        -:  328:
+        -:  329:class Existing //for existing client
+        -:  330:{
+        -:  331:	public:
+        -:  332:
+        -:  333:
+        -:  334:		////////////////////////////////////////////////////
+        -:  335:		// Function Name: IsRegistered
+        -:  336:		// Description : check for is the client already registered or not
+        -:  337:		// Use of Recursion : NA
+        -:  338:		// Returns : integer
+        -:  339:		////////////////////////////////////////////////////
+        -:  340:
+        -:  341:		int IsRegistered(string);
+        -:  342:
+        -:  343:		////////////////////////////////////////////////////
+        -:  344:		// Function Name: PassCheck
+        -:  345:		// Description : validates password
+        -:  346:		// Use of Recursion : NA
+        -:  347:		// Exceptions or Operating System Error Handling: to be done in CPP UNIT Testing
+        -:  348:		// Returns : integer
+        -:  349:		////////////////////////////////////////////////////
+        -:  350:
+        -:  351:		int PassCheck(string,string);
+        -:  352:
+        -:  353:		////////////////////////////////////////////////////
+        -:  354:		// Function Name: CurrStatus
+        -:  355:		// Description : to display status of user
+        -:  356:		// Use of Recursion : NA
+        -:  357:		// Returns : void
+        -:  358:		////////////////////////////////////////////////////
+        -:  359:		void CurrStatus(string);
+        -:  360:
+        -:  361:		////////////////////////////////////////////////////
+        -:  362:		// Function Name: TypesRequest
+        -:  363:		// Description : asks for call forwarding type(no reply, busy, unconditional)
+        -:  364:		// Use of Recursion : NA
+        -:  365:		// Exceptions or Operating System Error Handling: to be done in CPP UNIT Testing
+        -:  366:		// Returns : void
+        -:  367:		////////////////////////////////////////////////////
+        -:  368:
+        -:  369:		void TypesRequest(string);
+        -:  370:
+        -:  371:		////////////////////////////////////////////////////
+        -:  372:		// Function Name: EnableDis
+        -:  373:		// Description : enables or disables services
+        -:  374:		// Use of Recursion : NA
+        -:  375:		// Returns : void
+        -:  376:		////////////////////////////////////////////////////
+        -:  377:
+        -:  378:		void EnableDis(string);	//enables or disables services
+        -:  379:
+        -:  380:		////////////////////////////////////////////////////
+        -:  381:		// Function Name: Deregister
+        -:  382:		// Description : deregisters the client
+        -:  383:		// Use of Recursion : NA
+        -:  384:		// Returns : void
+        -:  385:		////////////////////////////////////////////////////
+        -:  386:
+        -:  387:		void Deregister(string);
+        -:  388:
+        -:  389:	private:
+        -:  390:		int mobile ;
+        -:  391:};
+        -:  392:
+        -:  393:class Makecall  // for making call
+        -:  394:{
+        -:  395:
+        -:  396:	public:
+        -:  397:
+        -:  398:		////////////////////////////////////////////////////
+        -:  399:		// Function Name: makeCall
+        -:  400:		// Description : makes call
+        -:  401:		// Use of Recursion : NA
+        -:  402:		// Exceptions or Operating System Error Handling: to be done in CPP UNIT Testing
+        -:  403:		// Returns : string
+        -:  404:		////////////////////////////////////////////////////
+        -:  405:
+        -:  406:		string makeCall();
+        -:  407:
+        -:  408:		////////////////////////////////////////////////////
+        -:  409:		// Function Name: setphone
+        -:  410:		// Description : sets receivers phone number
+        -:  411:		// Use of Recursion : NA
+        -:  412:		// Exceptions or Operating System Error Handling: to be done in CPP UNIT Testing
+        -:  413:		// Returns : void
+        -:  414:		////////////////////////////////////////////////////
+        -:  415:
+        -:  416:		void setphone(char *);
+        -:  417:
+        -:  418:		////////////////////////////////////////////////////
+        -:  419:		// Function Name: logger
+        -:  420:		// Description : stores INFO, DEBUG, ERROR, WARNING
+        -:  421:		// Use of Recursion : NA
+        -:  422:		// Exceptions or Operating System Error Handling: to be done in CPP UNIT Testing
+        -:  423:		// Returns : void
+        -:  424:		////////////////////////////////////////////////////
+        -:  425:
+        -:  426:		void logger(string);
+        -:  427:
+        -:  428:	private:
+        -:  429:
+        -:  430:		char receviver[20]={'\0'};
+        -:  431:			
+        -:  432:
+        -:  433:
+        -:  434:};

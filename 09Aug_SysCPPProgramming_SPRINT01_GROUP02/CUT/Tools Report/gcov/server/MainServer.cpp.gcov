@@ -1,0 +1,108 @@
+        -:    0:Source:src/MainServer.cpp
+        -:    1:/**********************************************************************************
+        -:    2:                       INCLUSION HEADER FILES
+        -:    3:***********************************************************************************/
+        -:    4:
+        -:    5:#include <common.h>
+        -:    6:#include <logger.h>
+        -:    7:
+        1:    8:void sighandle(int signum){
+        1:    9:	if(signum == SIGINT){
+        1:   10:		log(3, INFO, "Closing", "Main");
+        1:   11:		logfile.close();
+        1:   12:		cout<<"Server Ended Successfully\n";
+        1:   13:		exit(EXIT_SUCCESS);
+        -:   14:	}
+    #####:   15:}
+        -:   16:
+        1:   17:int main(int argc, char *argv[])
+        -:   18:{	
+        1:   19:	CFSS_SOCKET S;
+        -:   20:	//int portN = stoi(argv[2]);
+        1:   21:	string ipAdd = argv[1];
+        -:   22:	try
+        -:   23:	{
+        1:   24:	    if(argc!=3)
+        -:   25:    	{
+    #####:   26:	    	throw "Invalid number of argument";
+        -:   27:	    }
+        -:   28:    	else
+        -:   29:    	{
+        1:   30:			S.IPValidation(ipAdd);
+        1:   31:			S.PortValidation(argv[2]);
+        1:   32:			logfile.open(serverlog, ios::out|ios::app);
+        1:   33:			log(3, INFO, "Entering", "Main");
+        -:   34:			
+        1:   35:			signal(SIGINT,sighandle);
+        -:   36:			//int ServerFD = 
+        1:   37:			S.ConnectServer(argv); //creating the connection 
+        -:   38:			while(1){
+        2:   39:				char msg[MAX_BUFF]={'\0',};
+        2:   40:				int counter = 1;
+        -:   41:
+        2:   42:				int ClientFD = S.ClientAccept();  //Accepting the connection
+        1:   43:				strcpy(msg,"Welcome to server");
+        1:   44:				S.SendToC(msg);   //send message to the client
+        1:   45:				strcpy(msg,"Select the required option");
+        1:   46:				S.SendToC(msg);
+        -:   47:
+        3:   48:				while(counter){
+        -:   49:				
+        2:   50:				strcpy(msg," \n 1.Register \n 2.Existing User \n 3.Make call \n Press any other number to exit");
+        2:   51:				S.SendToC(msg);
+        4:   52:				string str = S.ReceiveFromC();
+        2:   53:				int option = stoi(str);
+        -:   54:
+        2:   55:				switch (option)
+        -:   56:				{
+    #####:   57:				case 1:
+        -:   58:				{	
+    #####:   59:					log(3, INFO, "Entering Registration", "Main");
+    #####:   60:					Registration reg;
+    #####:   61:					Login L;
+    #####:   62:					recv(ClientFD,&L,sizeof(L),0);
+    #####:   63:					L.createLogin(L);
+    #####:   64:					recv(ClientFD,&reg,sizeof(reg),0);//get the message sent by the client
+    #####:   65:					reg.registeruser();
+    #####:   66:					reg.clientstatus();
+        -:   67:				
+    #####:   68:					break;
+        -:   69:				}
+        -:   70:
+        1:   71:				case 2:
+        1:   72:					log(3, INFO, "Entering login", "Main");
+        -:   73:					Existing lg;
+        1:   74:					recv(ClientFD,&lg,sizeof(lg),0);
+        1:   75:					break;
+        -:   76:				
+    #####:   77:				case 3:
+        -:   78:
+        -:   79:					{
+    #####:   80:					log(3, INFO, "Making Call", "Main");
+    #####:   81:					Makecall m;
+    #####:   82:					string tmsg;
+    #####:   83:					recv(ClientFD,&m,sizeof(m),0);
+    #####:   84:					tmsg = m.makeCall();
+    #####:   85:					strcpy(msg,tmsg.c_str());
+    #####:   86:					S.SendToC(msg);
+    #####:   87:					break;
+        -:   88:					}
+        -:   89:
+        1:   90:				default:
+        1:   91:					counter = 0;
+        1:   92:					break;
+        -:   93:				}
+        -:   94:			
+        -:   95:			}
+        1:   96:			}
+        -:   97:			S.ClosesServer();   //close the connection
+        -:   98:
+        -:   99:		}
+        -:  100:	}
+    =====:  101:	catch(const char*err)
+        -:  102:	{
+    =====:  103:	    cout<<err;
+        -:  104:	}
+    =====:  105:	return 0;
+        -:  106:
+        -:  107:}

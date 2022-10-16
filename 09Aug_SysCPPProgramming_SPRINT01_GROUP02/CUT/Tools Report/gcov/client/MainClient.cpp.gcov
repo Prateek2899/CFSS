@@ -1,0 +1,236 @@
+        -:    0:Source:src/MainClient.cpp
+        -:    1:/**********************************************************************************
+        -:    2:                       INCLUSION HEADER FILES
+        -:    3:***********************************************************************************/
+        -:    4:
+        -:    5:#include <common.h>
+        -:    6:#include <logger.h>
+        -:    7:
+        -:    8:
+        1:    9:int main(int argc, char *argv[])
+        -:   10:{	
+        1:   11:	logfile.open(clientlog, ios::out|ios::app);
+        1:   12:	log(3, INFO, "Entering", "Main");
+        -:   13:
+        -:   14:	try
+        -:   15:	{
+        1:   16:	    if(argc!=3)
+        -:   17:    	{
+    #####:   18:	    	throw "Invalid number of argument";
+        -:   19:	    }
+        -:   20:    	else
+        -:   21:    	{
+        2:   22:			CFSS_SOCKET S;
+        2:   23:			string cmsg;
+        2:   24:			string sstr;
+        1:   25:			int ServerFD = S.ConnectClient(argv);  //client connection
+        -:   26:			//read&write
+        -:   27:			char msg[MAX_BUFF];
+        1:   28:			int counter=1;
+        3:   29:			for(int i=1;i<3;i++){
+        2:   30:			sstr = S.ReceiveFromS();
+        2:   31:			cout<<sstr<<endl;
+        -:   32:			}
+        -:   33:
+        3:   34:			while(counter)
+        -:   35:			{
+        -:   36:				//system("CLS");
+        2:   37:				sstr = S.ReceiveFromS();
+        2:   38:				cout<<sstr<<endl;
+        2:   39:				cin>>msg;
+        -:   40:				//fgets(msg,MAX_BUFF,stdin);
+        2:   41:				S.SendToS(msg);
+        2:   42:				int option = stoi(msg);
+        2:   43:				switch (option)
+        -:   44:				{
+    #####:   45:					case 1:
+        -:   46:					{
+    #####:   47:					log(3, INFO, "Entering Registration", "Main");
+        -:   48:					char callst[2],phone[10],type[2],dest[10],ser[2],status[2];
+    #####:   49:					char *pass = nullptr;
+    #####:   50:					Registration r;
+    #####:   51:					Login L;
+        -:   52:					//cout<<"Enter username"<<endl;
+        -:   53:					//cin>>user;
+        -:   54:					//r.setusername(user);
+    #####:   55:					sleep(1);
+    #####:   56:					cout << "\033[2J\033[1;1H"; // to clear output screen
+    #####:   57:					cout<<"/***************************************************************************************************************"<<endl;
+    #####:   58:					cout<<"---------------------------------------------------Registering---------------------------------------------------"<<endl;
+    #####:   59:					cout<<"***************************************************************************************************************/"<<endl;
+        -:   60:
+    #####:   61:					cout<<"\n Enter phone No"<<endl;
+    #####:   62:					cin>>phone;
+    #####:   63:					L.setmobNo(phone);
+    #####:   64:					r.setphoneNo(phone);
+        -:   65:					//cout<<"Enter password"<<endl;
+    #####:   66:					pass = getpass("Enter password");
+    #####:   67:					L.setpasswd(pass);	
+    #####:   68:					send(ServerFD,&L,sizeof(L),0);	
+        -:   69:					//r.setpasswd(pass);			
+    #####:   70:					cout<<"Enter type of call forwarding \n 1.Unconditional \n 2.Busy \n 3.No reply"<<endl;
+    #####:   71:					cin>>type;
+    #####:   72:					r.settype(type);
+    #####:   73:					cout<<"What will be your current call status \n 1.Unconditional \n 2.Busy \n 3.No reply "<<endl;
+    #####:   74:					cin>>callst;
+    #####:   75:					r.setcallstatus(callst);
+    #####:   76:					cout<<"Enter number to be call forwarded to"<<endl;
+    #####:   77:					cin>>dest;
+    #####:   78:					r.setdest(dest);
+    #####:   79:					cout<<"Press 1 if you want service to be enable or press 0 to disable "<<endl;
+    #####:   80:					cin>>ser;
+    #####:   81:					r.setservice(ser);
+    #####:   82:					strcpy(status,"1");
+    #####:   83:					r.setclientst(status);	
+    #####:   84:					cout<<"Successfully Registered"<<endl;								
+    #####:   85:					send(ServerFD,&r,sizeof(r),0);
+        -:   86:
+    #####:   87:					sleep(1);
+    #####:   88:					cout << "\033[2J\033[1;1H"; // to clear output screen
+    #####:   89:					cout<<"\n \n \n \n \n \n \n \n"<<endl;
+    #####:   90:					cout<<"/***************************************************************************************************************"<<endl;
+    #####:   91:					cout<<"/***************************************************************************************************************"<<endl;
+    #####:   92:					cout<<"---------------------------------------------Redirecting to main page-------------------------------------------"<<endl;
+    #####:   93:					cout<<"/***************************************************************************************************************"<<endl;
+    #####:   94:					cout<<"***************************************************************************************************************/"<<endl;
+    #####:   95:					break;
+        -:   96:					}
+        -:   97:
+        1:   98:					case 2:
+        -:   99:					{
+        1:  100:					log(3, INFO, "Entering Login", "Main");
+        1:  101:					sleep(1);
+        1:  102:					cout << "\033[2J\033[1;1H"; // to clear output screen
+        1:  103:					cout<<"/***************************************************************************************************************"<<endl;
+        1:  104:					cout<<"-----------------------------------------------------Login------------------------------------------------------"<<endl;
+        1:  105:					cout<<"***************************************************************************************************************/"<<endl;
+        -:  106:
+        -:  107:						char phone[11];
+        1:  108:						char *pass = nullptr;
+        -:  109:						Existing l;
+        1:  110:						Login L;
+        1:  111:						cout<<"Enter phone No"<<endl;
+        1:  112:						cin>>phone;
+        1:  113:						pass=getpass("Enter password");
+        -:  114:
+        1:  115:						int f2 = L.signin(phone,pass);
+        1:  116:						if(f2==0)
+        -:  117:						{
+    #####:  118:							cout<<"Incorrect username/password"<<endl;
+    #####:  119:							send(ServerFD,&l,sizeof(l),0);
+    #####:  120:							break;
+        -:  121:						}
+        2:  122:						string mob(phone);
+        -:  123:
+        1:  124:						int f1 = l.IsRegistered(mob);
+        1:  125:						if(f1==0)
+        -:  126:						{
+    #####:  127:							log(3, DEBUG, "DO NOT EXIST", "IsRegistered");
+    #####:  128:							cout<<"Do not exist"<<endl;
+    #####:  129:							cout<<"Failed to Login"<<endl;
+        -:  130:							
+    #####:  131:							send(ServerFD,&l,sizeof(l),0);
+    #####:  132:							break;
+        -:  133:						}
+        -:  134:						
+        -:  135:						
+        -:  136:						//string pw(pass);
+        -:  137:						/*int f2 = l.PassCheck(mob,pw);
+        -:  138:						if(f2==0)
+        -:  139:						{	
+        -:  140:							log(3, DEBUG, "INVALID", "PassCheck");
+        -:  141:							cout<<"Incorrect password"<<endl;
+        -:  142:							cout<<"Failed to Login"<<endl;
+        -:  143:							send(ServerFD,&l,sizeof(l),0);
+        -:  144:							break;
+        -:  145:						}*/
+        -:  146:						//break;
+        -:  147:						//}
+        1:  148:					sleep(1);
+        1:  149:						cout << "\033[2J\033[1;1H"; // to clear output screen
+        1:  150:						cout<<"/***************************************************************************************************************"<<endl;
+        1:  151:						cout<<"-----------------------------------------------------Updation----------------------------------------------------"<<endl;
+        1:  152:						cout<<"***************************************************************************************************************/"<<endl;
+        -:  153:
+        -:  154:						int ch;
+        1:  155:						cout<<"Press - for choices \n 1 - Enable or Disable the call forwarding service \n 2 - Deregister from our services "<<endl;
+        1:  156:						cout<<" 3 - Changing the types of call forwarding \n 4 - To view your service status"<<endl;
+        1:  157:						cin>>ch;
+        -:  158:						//string mob(phone);
+        -:  159:						//cout<<"mob1 = "<<mob<<endl;
+        1:  160:						switch(ch) 
+        -:  161:						{
+    #####:  162:						case 1:   
+    #####:  163:							l.EnableDis(mob);
+    #####:  164:							break;
+    #####:  165:						case 2:	
+    #####:  166:							l.Deregister(mob);
+    #####:  167:							break;
+    #####:  168:						case 3:	
+    #####:  169:							l.TypesRequest(mob);
+    #####:  170:							break;
+        1:  171:						case 4:	
+        1:  172:							l.CurrStatus(mob);
+        1:  173:							break;
+    #####:  174:						default	:	cout << "Invalid Choice!" << endl;
+    #####:  175:							break;				
+        -:  176:						}
+        -:  177:
+        1:  178:						send(ServerFD,&l,sizeof(l),0);
+        1:  179:						sleep(1);
+        1:  180:					cout << "\033[2J\033[1;1H"; // to clear output screen
+        1:  181:					cout<<"\n \n \n \n \n \n \n \n"<<endl;
+        1:  182:					cout<<"/***************************************************************************************************************"<<endl;
+        1:  183:					cout<<"/***************************************************************************************************************"<<endl;
+        1:  184:					cout<<"---------------------------------------------Redirecting to main page-------------------------------------------"<<endl;
+        1:  185:					cout<<"/***************************************************************************************************************"<<endl;
+        1:  186:					cout<<"***************************************************************************************************************/"<<endl;
+        1:  187:						break;
+        -:  188:					}
+    #####:  189:				case 3:
+        -:  190:				{
+    #####:  191:					log(3, INFO, "Entering Call Process", "Main");
+    #####:  192:					sleep(1);
+    #####:  193:						cout << "\033[2J\033[1;1H"; // to clear output screen
+    #####:  194:						cout<<"/***************************************************************************************************************"<<endl;
+    #####:  195:						cout<<"----------------------------------------------------Make Call---------------------------------------------------"<<endl;
+    #####:  196:						cout<<"***************************************************************************************************************/"<<endl;
+        -:  197:					
+        -:  198:					char phone[20];
+    #####:  199:					Makecall m;
+    #####:  200:					cout<<"Enter the number you want to call"<<endl;
+    #####:  201:					cin>>phone;
+    #####:  202:					m.setphone(phone);
+    #####:  203:					send(ServerFD,&m,sizeof(m),0);
+    #####:  204:					sstr = S.ReceiveFromS();
+    #####:  205:					cout<<sstr<<endl;
+        -:  206:
+    #####:  207:					sleep(1);
+    #####:  208:					cout << "\033[2J\033[1;1H"; // to clear output screen
+    #####:  209:					cout<<"\n \n \n \n \n \n \n \n"<<endl;
+    #####:  210:					cout<<"/***************************************************************************************************************"<<endl;
+    #####:  211:					cout<<"/***************************************************************************************************************"<<endl;
+    #####:  212:					cout<<"---------------------------------------------Redirecting to main page-------------------------------------------"<<endl;
+    #####:  213:					cout<<"/***************************************************************************************************************"<<endl;
+    #####:  214:					cout<<"***************************************************************************************************************/"<<endl;
+    #####:  215:					break;
+        -:  216:				}
+        1:  217:				default:
+        1:  218:					cout<<"Closing!!"<<endl;
+        1:  219:					log(3, INFO, "Closing", "Main");
+        1:  220:					counter=0;
+        1:  221:					break;
+        -:  222:				}
+        2:  223:			sleep(2);
+        2:  224:			cout << "\033[2J\033[1;1H"; // to clear output screen
+        -:  225:			}
+        1:  226:			logfile.close();
+        1:  227:			S.ClosesServer();  //closing the connection
+        -:  228:		}
+        -:  229:	}
+    =====:  230:	catch(const char*err)
+        -:  231:	{
+    =====:  232:	    cout<<err;
+        -:  233:	}
+        1:  234:	return 0;
+        -:  235:}

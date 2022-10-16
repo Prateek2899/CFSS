@@ -1,0 +1,174 @@
+==10423== Memcheck, a memory error detector
+==10423== Copyright (C) 2002-2022, and GNU GPL'd, by Julian Seward et al.
+==10423== Using Valgrind-3.19.0-8d3c8034b8-20220411 and LibVEX; rerun with -h for copyright info
+==10423== Command: ../bin/Server
+==10423== Parent PID: 10422
+==10423== 
+--10423-- 
+--10423-- Valgrind options:
+--10423--    -v
+--10423--    --tool=memcheck
+--10423--    --leak-check=full
+--10423--    --show-reachable=yes
+--10423--    --log-file=../bin/valserver
+--10423-- Contents of /proc/version:
+--10423--   Linux version 5.15.0-50-generic (buildd@lcy02-amd64-009) (gcc (Ubuntu 9.4.0-1ubuntu1~20.04.1) 9.4.0, GNU ld (GNU Binutils for Ubuntu) 2.34) #56~20.04.1-Ubuntu SMP Tue Sep 27 15:51:29 UTC 2022
+--10423-- 
+--10423-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-ssse3-avx-avx2-rdrand-rdseed
+--10423-- Page sizes: currently 4096, max supported 4096
+--10423-- Valgrind library directory: /snap/valgrind/136/usr/libexec/valgrind
+--10423-- Reading syms from /home/wolverine/Sprint_Prj/CFSS_f/bin/Server
+--10423-- Reading syms from /usr/lib/x86_64-linux-gnu/ld-2.31.so
+--10423--   Considering /usr/lib/debug/.build-id/45/87364908de169dec62ffa538170118c1c3a078.debug ..
+--10423--   .. build-id is valid
+--10423-- Reading syms from /snap/valgrind/136/usr/libexec/valgrind/memcheck-amd64-linux
+--10423--    object doesn't have a dynamic symbol table
+--10423-- Warning: inlined fn name without absori
+--10423-- is shown as UnknownInlinedFun
+--10423-- Scheduler: using generic scheduler lock implementation.
+--10423-- Reading suppressions file: /snap/valgrind/136/usr/libexec/valgrind/default.supp
+==10423== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-10423-by-wolverine-on-???
+==10423== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-10423-by-wolverine-on-???
+==10423== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-10423-by-wolverine-on-???
+==10423== 
+==10423== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==10423== don't want to do, unless you know exactly what you're doing,
+==10423== or are doing some strange experiment):
+==10423==   /snap/valgrind/136/usr/libexec/valgrind/../../bin/vgdb --pid=10423 ...command...
+==10423== 
+==10423== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==10423==   /path/to/gdb ../bin/Server
+==10423== and then give GDB the following command
+==10423==   target remote | /snap/valgrind/136/usr/libexec/valgrind/../../bin/vgdb --pid=10423
+==10423== --pid is optional if only one valgrind process is running
+==10423== 
+--10423-- REDIR: 0x4022e20 (ld-linux-x86-64.so.2:strlen) redirected to 0x581e94bb (vgPlain_amd64_linux_REDIR_FOR_strlen)
+--10423-- REDIR: 0x4022bf0 (ld-linux-x86-64.so.2:index) redirected to 0x581e94d5 (vgPlain_amd64_linux_REDIR_FOR_index)
+--10423-- Reading syms from /snap/valgrind/136/usr/libexec/valgrind/vgpreload_core-amd64-linux.so
+--10423-- Reading syms from /snap/valgrind/136/usr/libexec/valgrind/vgpreload_memcheck-amd64-linux.so
+==10423== WARNING: new redirection conflicts with existing -- ignoring it
+--10423--     old: 0x04022e20 (strlen              ) R-> (0000.0) 0x581e94bb vgPlain_amd64_linux_REDIR_FOR_strlen
+--10423--     new: 0x04022e20 (strlen              ) R-> (2007.0) 0x04a3ef30 strlen
+--10423-- REDIR: 0x401f600 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4a40060 (strcmp)
+--10423-- REDIR: 0x4023380 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4a44280 (mempcpy)
+--10423-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28
+--10423--    object doesn't have a symbol table
+--10423-- Reading syms from /usr/lib/x86_64-linux-gnu/libgcc_s.so.1
+--10423--    object doesn't have a symbol table
+--10423-- Reading syms from /usr/lib/x86_64-linux-gnu/libc-2.31.so
+--10423--   Considering /usr/lib/debug/.build-id/18/78e6b475720c7c51969e69ab2d276fae6d1dee.debug ..
+--10423--   .. build-id is valid
+==10423== WARNING: new redirection conflicts with existing -- ignoring it
+--10423--     old: 0x04f1e250 (memalign            ) R-> (1011.0) 0x04a3e175 memalign
+--10423--     new: 0x04f1e250 (memalign            ) R-> (1017.0) 0x04a3e14b aligned_alloc
+==10423== WARNING: new redirection conflicts with existing -- ignoring it
+--10423--     old: 0x04f1e250 (memalign            ) R-> (1011.0) 0x04a3e175 memalign
+--10423--     new: 0x04f1e250 (memalign            ) R-> (1017.0) 0x04a3e121 aligned_alloc
+==10423== WARNING: new redirection conflicts with existing -- ignoring it
+--10423--     old: 0x04f1e250 (memalign            ) R-> (1011.0) 0x04a3e175 memalign
+--10423--     new: 0x04f1e250 (memalign            ) R-> (1017.0) 0x04a3e14b aligned_alloc
+==10423== WARNING: new redirection conflicts with existing -- ignoring it
+--10423--     old: 0x04f1e250 (memalign            ) R-> (1011.0) 0x04a3e175 memalign
+--10423--     new: 0x04f1e250 (memalign            ) R-> (1017.0) 0x04a3e121 aligned_alloc
+--10423-- Reading syms from /usr/lib/x86_64-linux-gnu/libm-2.31.so
+--10423--   Considering /usr/lib/debug/.build-id/fe/91b4090ea04c1559ff71dd9290062776618891.debug ..
+--10423--   .. build-id is valid
+--10423-- REDIR: 0x4f23480 (libc.so.6:memmove) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+==10423== Preferring higher priority redirection:
+--10423--     old: 0x0500e6e0 (__memcpy_avx_unalign) R-> (2018.0) 0x04a415a0 __memcpy_avx_unaligned_erms
+--10423--     new: 0x0500e6e0 (__memcpy_avx_unalign) R-> (2018.1) 0x04a43260 memmove
+--10423-- REDIR: 0x4f22780 (libc.so.6:strncpy) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f237b0 (libc.so.6:strcasecmp) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f220a0 (libc.so.6:strcat) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f227e0 (libc.so.6:rindex) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f24c50 (libc.so.6:rawmemchr) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f3fce0 (libc.so.6:wmemchr) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f3f820 (libc.so.6:wcscmp) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f235e0 (libc.so.6:mempcpy) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f23410 (libc.so.6:bcmp) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f22710 (libc.so.6:strncmp) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f22150 (libc.so.6:strcmp) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f23540 (libc.so.6:memset) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f3f7e0 (libc.so.6:wcschr) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f22670 (libc.so.6:strnlen) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f22230 (libc.so.6:strcspn) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f23800 (libc.so.6:strncasecmp) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f221d0 (libc.so.6:strcpy) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f23950 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f40f50 (libc.so.6:wcsnlen) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f3f860 (libc.so.6:wcscpy) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f22820 (libc.so.6:strpbrk) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f22100 (libc.so.6:index) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f22630 (libc.so.6:strlen) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f2bbb0 (libc.so.6:memrchr) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f23850 (libc.so.6:strcasecmp_l) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f233d0 (libc.so.6:memchr) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f3f930 (libc.so.6:wcslen) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f22ae0 (libc.so.6:strspn) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f23750 (libc.so.6:stpncpy) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f236f0 (libc.so.6:stpcpy) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f24c90 (libc.so.6:strchrnul) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x4f238a0 (libc.so.6:strncasecmp_l) redirected to 0x48326e8 (_vgnU_ifunc_wrapper)
+--10423-- REDIR: 0x500b500 (libc.so.6:__strrchr_avx2) redirected to 0x4a3e8b0 (rindex)
+--10423-- REDIR: 0x4f1d0e0 (libc.so.6:malloc) redirected to 0x4a38fd3 (malloc)
+--10423-- REDIR: 0x500b6d0 (libc.so.6:__strlen_avx2) redirected to 0x4a3ee70 (strlen)
+--10423-- REDIR: 0x5007cc0 (libc.so.6:__memcmp_avx2_movbe) redirected to 0x4a428a0 (bcmp)
+--10423-- REDIR: 0x5006bd0 (libc.so.6:__strcmp_avx2) redirected to 0x4a3ff20 (strcmp)
+--10423-- REDIR: 0x500d900 (libc.so.6:__stpcpy_avx2) redirected to 0x4a42a00 (stpcpy)
+--10423-- REDIR: 0x500e6c0 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4a43ec0 (mempcpy)
+--10423-- REDIR: 0x4f1d6d0 (libc.so.6:free) redirected to 0x4a3b8c1 (free)
+--10423-- REDIR: 0x4d30b20 (libstdc++.so.6:operator new(unsigned long)) redirected to 0x4a39745 (operator new(unsigned long))
+--10423-- REDIR: 0x500e6e0 (libc.so.6:__memcpy_avx_unaligned_erms) redirected to 0x4a43260 (memmove)
+--10423-- REDIR: 0x4f1de80 (libc.so.6:realloc) redirected to 0x4a3ddb9 (realloc)
+==10423== 
+==10423== Process terminating with default action of signal 6 (SIGABRT)
+==10423==    at 0x4EC600B: raise (raise.c:51)
+==10423==    by 0x4EA5858: abort (abort.c:79)
+==10423==    by 0x4D24910: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+==10423==    by 0x4D3038B: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+==10423==    by 0x4D303F6: std::terminate() (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+==10423==    by 0x4D306A8: __cxa_throw (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+==10423==    by 0x4D2721D: std::__throw_logic_error(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+==10423==    by 0x4DCBD6A: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+==10423==    by 0x10BC2E: main (MainServer.cpp:21)
+==10423== 
+==10423== HEAP SUMMARY:
+==10423==     in use at exit: 72,914 bytes in 3 blocks
+==10423==   total heap usage: 4 allocs, 1 frees, 72,946 bytes allocated
+==10423== 
+==10423== Searching for pointers to 3 not-freed blocks
+==10423== Checked 113,288 bytes
+==10423== 
+==10423== 66 bytes in 1 blocks are possibly lost in loss record 1 of 3
+==10423==    at 0x4A397B3: operator new(unsigned long) (vg_replace_malloc.c:422)
+==10423==    by 0x4D74378: std::string::_Rep::_S_create(unsigned long, unsigned long, std::allocator<char> const&) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+==10423==    by 0x4D57187: std::logic_error::logic_error(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+==10423==    by 0x4D27207: std::__throw_logic_error(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+==10423==    by 0x4DCBD6A: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+==10423==    by 0x10BC2E: main (MainServer.cpp:21)
+==10423== 
+==10423== 144 bytes in 1 blocks are possibly lost in loss record 2 of 3
+==10423==    at 0x4A39045: malloc (vg_replace_malloc.c:381)
+==10423==    by 0x4D2F1F3: __cxa_allocate_exception (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+==10423==    by 0x4D271F1: std::__throw_logic_error(char const*) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+==10423==    by 0x4DCBD6A: void std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_construct<char const*>(char const*, char const*, std::forward_iterator_tag) (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+==10423==    by 0x10BC2E: main (MainServer.cpp:21)
+==10423== 
+==10423== 72,704 bytes in 1 blocks are still reachable in loss record 3 of 3
+==10423==    at 0x4A39045: malloc (vg_replace_malloc.c:381)
+==10423==    by 0x4D2CA99: ??? (in /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.28)
+==10423==    by 0x4011B99: call_init.part.0 (dl-init.c:72)
+==10423==    by 0x4011CA0: call_init (dl-init.c:30)
+==10423==    by 0x4011CA0: _dl_init (dl-init.c:119)
+==10423==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==10423== 
+==10423== LEAK SUMMARY:
+==10423==    definitely lost: 0 bytes in 0 blocks
+==10423==    indirectly lost: 0 bytes in 0 blocks
+==10423==      possibly lost: 210 bytes in 2 blocks
+==10423==    still reachable: 72,704 bytes in 1 blocks
+==10423==                       of which reachable via heuristic:
+==10423==                         stdstring          : 66 bytes in 1 blocks
+==10423==         suppressed: 0 bytes in 0 blocks
+==10423== 
+==10423== ERROR SUMMARY: 2 errors from 2 contexts (suppressed: 0 from 0)

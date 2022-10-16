@@ -1,0 +1,83 @@
+Wed Oct 12 13:39:07 2022 [INFO]: Entering Main 
+Wed Oct 12 13:39:08 2022 [INFO]: Entering Registration Main 
+Wed Oct 12 13:39:33 2022 [INFO]: Entering Registration Main 
+Wed Oct 12 13:39:57 2022 [INFO]: Entering Registration Main 
+Wed Oct 12 13:40:26 2022 [INFO]: Entering Login Main 
+Wed Oct 12 13:40:39 2022 [INFO]: Entering IsRegistered 
+Wed Oct 12 13:40:45 2022 [INFO]: Entering Deregister 
+Wed Oct 12 13:40:53 2022 [INFO]: Closing Main 
+Thu Oct 13 12:33:33 2022 [INFO]: Entering Main 
+Thu Oct 13 12:33:35 2022 [INFO]: Entering Call Process Main 
+Thu Oct 13 12:33:48 2022 [INFO]: Entering Login Main 
+Thu Oct 13 12:34:01 2022 [INFO]: Closing Main 
+Thu Oct 13 12:35:00 2022 [INFO]: Entering Main 
+Thu Oct 13 12:35:01 2022 [INFO]: Entering Registration Main 
+Thu Oct 13 12:35:28 2022 [INFO]: Entering Call Process Main 
+Thu Oct 13 12:35:36 2022 [INFO]: Closing Main 
+Thu Oct 13 12:37:48 2022 [INFO]: Entering Main 
+Thu Oct 13 12:37:48 2022 [ERROR]: Connection failure ConnectClient 
+Thu Oct 13 12:38:18 2022 [INFO]: Entering Main 
+Thu Oct 13 12:38:18 2022 [ERROR]: Connection failure ConnectClient 
+Thu Oct 13 12:38:27 2022 [INFO]: Entering Main 
+Thu Oct 13 12:39:10 2022 [INFO]: Entering Main 
+Thu Oct 13 12:39:10 2022 [ERROR]: Connection failure ConnectClient 
+Thu Oct 13 13:00:22 2022 [INFO]: Entering Main 
+Thu Oct 13 13:00:25 2022 [INFO]: Entering Login Main 
+Thu Oct 13 13:00:34 2022 [INFO]: Entering IsRegistered 
+Thu Oct 13 13:00:45 2022 [INFO]: Entering CurrStatus 
+Thu Oct 13 13:00:57 2022 [INFO]: Closing Main 
+Thu Oct 13 15:04:29 2022 [INFO]: Entering Main 
+Thu Oct 13 15:05:39 2022 [INFO]: Entering Main 
+Thu Oct 13 15:05:39 2022 [ERROR]: Connection failure ConnectClient 
+Thu Oct 13 15:06:12 2022 [INFO]: Entering Main 
+Thu Oct 13 15:06:28 2022 [INFO]: Entering Call Process Main 
+Thu Oct 13 15:06:46 2022 [INFO]: Closing Main 
+Thu Oct 13 15:07:10 2022 [INFO]: Entering Call Process Main 
+Thu Oct 13 15:09:45 2022 [INFO]: Closing Main 
+Thu Oct 13 20:45:07 2022 [INFO]: Entering Main 
+Thu Oct 13 20:45:23 2022 [INFO]: Closing Main 
+Thu Oct 13 23:51:42 2022 [INFO]: Entering Main 
+Thu Oct 13 23:51:45 2022 [INFO]: Entering Login Main 
+Thu Oct 13 23:51:52 2022 [INFO]: Entering IsRegistered 
+Thu Oct 13 23:51:56 2022 [INFO]: Entering TypesRequest 
+Thu Oct 13 23:52:05 2022 [INFO]: Closing Main 
+Fri Oct 14 10:03:15 2022 [INFO]: Entering Main 
+Fri Oct 14 10:03:18 2022 [INFO]: Entering Registration Main 
+Fri Oct 14 10:03:42 2022 [INFO]: Entering Login Main 
+Fri Oct 14 10:04:03 2022 [INFO]: Entering IsRegistered 
+Fri Oct 14 10:04:07 2022 [INFO]: Entering CurrStatus 
+Fri Oct 14 10:04:12 2022 [INFO]: Entering Call Process Main 
+Fri Oct 14 10:04:24 2022 [INFO]: Closing Main 
+Fri Oct 14 10:07:01 2022 [INFO]: Entering Main 
+Fri Oct 14 10:07:03 2022 [INFO]: Entering Login Main 
+Fri Oct 14 10:07:18 2022 [INFO]: Entering IsRegistered 
+Fri Oct 14 10:07:23 2022 [INFO]: Entering Deregister 
+Fri Oct 14 10:07:33 2022 [INFO]: Entering Call Process Main 
+Fri Oct 14 10:07:44 2022 [INFO]: Entering Call Process Main 
+Fri Oct 14 10:07:55 2022 [INFO]: Closing Main 
+Fri Oct 14 11:47:28 2022 [INFO]: Entering Main 
+Fri Oct 14 11:47:32 2022 [INFO]: Entering Login Main 
+Fri Oct 14 11:47:48 2022 [INFO]: Entering Login Main 
+Fri Oct 14 11:48:04 2022 [INFO]: Entering Login Main 
+Fri Oct 14 11:48:12 2022 [INFO]: Entering Login Main 
+Fri Oct 14 11:48:21 2022 [INFO]: Entering IsRegistered 
+Fri Oct 14 11:48:25 2022 [INFO]: Entering CurrStatus 
+Fri Oct 14 11:48:29 2022 [INFO]: Entering Login Main 
+Fri Oct 14 11:48:38 2022 [INFO]: Entering IsRegistered 
+Fri Oct 14 11:48:45 2022 [INFO]: Entering TypesRequest 
+Fri Oct 14 11:49:46 2022 [INFO]: Closing Main 
+Fri Oct 14 11:51:25 2022 [INFO]: Entering Main 
+Fri Oct 14 11:51:28 2022 [INFO]: Entering Registration Main 
+Fri Oct 14 11:52:07 2022 [INFO]: Entering Call Process Main 
+Fri Oct 14 11:52:15 2022 [INFO]: Entering Call Process Main 
+Fri Oct 14 11:52:24 2022 [INFO]: Closing Main 
+Fri Oct 14 11:54:12 2022 [INFO]: Entering Main 
+Fri Oct 14 11:54:22 2022 [INFO]: Entering Registration Main 
+Fri Oct 14 11:54:49 2022 [INFO]: Entering Call Process Main 
+Fri Oct 14 11:55:08 2022 [INFO]: Closing Main 
+Fri Oct 14 12:00:56 2022 [INFO]: Entering Main 
+Fri Oct 14 12:00:58 2022 [INFO]: Entering Login Main 
+Fri Oct 14 12:01:18 2022 [INFO]: Entering IsRegistered 
+Fri Oct 14 12:01:23 2022 [INFO]: Entering CurrStatus 
+Fri Oct 14 12:01:28 2022 [INFO]: Entering Call Process Main 
+Fri Oct 14 12:01:40 2022 [INFO]: Closing Main 

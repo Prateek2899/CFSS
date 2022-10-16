@@ -1,0 +1,114 @@
+        -:    0:Source:src/logger.cpp
+        -:    1:/**********************************************************************************
+        -:    2:                       INCLUSION HEADER FILES
+        -:    3:***********************************************************************************/
+        -:    4:
+        -:    5:#include <logger.h>
+        -:    6:
+        -:    7:LogLevel glevel = DEBUG;
+        -:    8:fstream logfile;
+       10:    9:string getCurrentTime()
+        -:   10:{
+       20:   11:   string currTime;
+        -:   12:   //Current date/time based on current time
+       10:   13:   time_t now = time(0); 
+        -:   14:   // Convert current time to string
+       10:   15:   currTime.assign(ctime(&now));
+        -:   16:
+        -:   17:   // Last charactor of currentTime is "\n", so remove it
+       10:   18:   string currentTime = currTime.substr(0, currTime.size()-1);
+       20:   19:   return currentTime;
+        -:   20:}
+        -:   21:
+       10:   22:void log(int arg,...)
+        -:   23:{
+        -:   24:	
+        -:   25:    int level;		//stores the log level received in the function 
+       20:   26:    string val;		//stores variable arguments received in the function
+       10:   27:    string data;	//stores the log level in string to be stored in the log file
+        -:   28:    bool display;	//checks whether to add string in logfile
+        -:   29:    
+        -:   30:    va_list vlist; 	//holds the information needed by va_start, va_arg, va_end
+       10:   31:    va_start(vlist,arg);	//enables access to variadic function arguments
+        -:   32:    
+        -:   33:    //loop to access variable arguments   
+       40:   34:    for(int i = 1; i <= arg; i++)
+        -:   35:    {
+        -:   36:        
+       30:   37:        if (i == 1)
+        -:   38:        {
+        -:   39:            
+       10:   40:                level = va_arg(vlist,int);	//accesses the next variadic function argument
+       10:   41:                switch(level)		//checks for the log level
+        -:   42:                {
+       10:   43:                    case INFO : if (INFO <= glevel)
+        -:   44:                                {
+        -:   45:					
+       10:   46:                                    data = "INFO";
+       10:   47:                                    logfile << getCurrentTime() << " [" << data <<"]: "; 
+       10:   48:                                    display = true;
+        -:   49:                                }
+        -:   50:                                else
+        -:   51:                                {
+    #####:   52:                                    display = false;
+    #####:   53:                                    break;
+        -:   54:                                }
+       10:   55:                                break;
+        -:   56:
+    #####:   57:                    case WARNING : if (WARNING <= glevel)
+        -:   58:                                   {
+    #####:   59:                                    	data = "WARNING";
+    #####:   60:                                    	logfile << getCurrentTime() << " [" << data <<"]: "; 
+    #####:   61:                                    	display = true;
+        -:   62:                                   }
+        -:   63:                                   else
+        -:   64:                                   {
+    #####:   65:                                    	display = false;
+    #####:   66:                                    	break;
+        -:   67:                                   }
+    #####:   68:                                   break;
+        -:   69:
+    #####:   70:                    case DEBUG : if (DEBUG <= glevel)
+        -:   71:                                {
+    #####:   72:                                    data = "DEBUG";
+    #####:   73:                                    logfile << getCurrentTime() << " [" << data <<"]: "; 
+    #####:   74:                                    display = true;
+        -:   75:                                }
+        -:   76:                                else
+        -:   77:                                {
+    #####:   78:                                   display = false;
+    #####:   79:                                   break;
+        -:   80:                                }
+    #####:   81:                                break;
+    #####:   82:                    case ERROR : if (DEBUG <= glevel)
+        -:   83:                                {
+    #####:   84:                                    data = "ERROR";
+    #####:   85:                                    logfile << getCurrentTime() << " [" << data <<"]: "; 
+    #####:   86:                                    display = true;
+        -:   87:                                }
+        -:   88:                                else
+        -:   89:                                {
+    #####:   90:                                   display = false;
+    #####:   91:                                   break;
+        -:   92:                                }
+    #####:   93:                                break;
+        -:   94:                }
+        -:   95:                
+        -:   96:           
+        -:   97:        }
+        -:   98:        else
+        -:   99:        {
+       20:  100:            if(display)
+        -:  101:            {
+        -:  102:
+       20:  103:                val = va_arg(vlist,char*);
+       20:  104:                logfile << val <<" ";
+        -:  105:            }
+        -:  106:        }
+        -:  107:    }
+       10:  108:    if(display)
+        -:  109:    {
+       10:  110:        logfile <<endl;
+        -:  111:    }
+       10:  112:    va_end(vlist);	//ends traversal of the variadic function arguments
+       10:  113:}
